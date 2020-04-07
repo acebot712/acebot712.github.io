@@ -77,6 +77,17 @@ body{
 	font-size: 6.5em;
 }
 
+@media only screen and (max-width: 600px){
+	.hero h1{
+		z-index: 2;
+		position: absolute;
+		top: 80%;
+		left: 45%;
+		transform: translate(-50%,-50%);
+		font-size: 4em;
+	}
+}
+
 .hero h1 a{
 	color: black;
 }
@@ -152,7 +163,7 @@ body{
 	border-radius: 15px 0px 0px 15px
 }
 
-.nav-item:hover:last-child{
+.nav-item:last-child:hover{
 	background: rgba(255,255,255,1);
 	font-weight: bold;
 	border-radius: 0px 15px 15px 0px;
@@ -162,6 +173,36 @@ body{
 	.nav-item{
 		background: rgba(255,255,255,0.9);
 		border: 2px solid #1C6EA4;
+		border-radius: 15px;
+	}
+
+	.nav-item:first-child{
+		background: rgba(255,255,255,0.9);
+		border: 2px solid #1C6EA4;
+		border-radius: 15px;
+	}
+
+	.nav-item:last-child{
+		background: rgba(255,255,255,0.9);
+		border: 2px solid #1C6EA4;
+		border-radius: 15px;
+	}
+
+	.nav-item:hover{
+		background: rgba(255,255,255,1);
+		font-weight: bold;
+		border-radius: 15px;
+	}
+
+	.nav-item:first-child:hover{
+		background: rgba(255,255,255,1);
+		font-weight: bold;
+		border-radius: 15px;
+	}
+
+	.nav-item:last-child:hover{
+		background: rgba(255,255,255,1);
+		font-weight: bold;
 		border-radius: 15px;
 	}
 }
