@@ -143,7 +143,7 @@ function setColor(){
 
 // This is how to use media queries in JavaScript
 var x = window.matchMedia("(max-width: 600px)")
-document.querySelector("body").style.background = "url(../assets/background_0.jpg) center"
+
 function checker(x){
 	if(x.matches){
 		document.querySelector("body").style.background = "url(../assets/background_0.jpg) center";
@@ -162,6 +162,7 @@ if(isBlogArticle == 1){
 	setDate(document.getElementById("blogID").innerText)
 	setAuthor(document.getElementById("blogID").innerText)
 	setTitle(document.getElementById("blogID").innerText)
+	document.querySelector("body").style.background = "url(../assets/background_0.jpg) center" //default
 	checker(x)
 }else{
 	populateBlogList();
