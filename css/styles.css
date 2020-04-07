@@ -71,20 +71,61 @@ body{
 .hero h1{
 	z-index: 2;
 	position: absolute;
-	top: 80%;
-	left: 45%;
+	top: 45%;
+	left: 75%;
 	transform: translate(-50%,-50%);
-	font-size: 6.5em;
+	font-size: 6em;
 }
+
+.hero h1 a{
+	color: black;
+	text-decoration: underline;
+}
+
+.name{
+	position: absolute;
+	top: 40%;
+	left: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 4em;
+}
+
+.name .flex-item{
+	flex: 1;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	background: black;
+	color: white;
+	padding: 0 10px;
+	margin: 2px;
+}
+
+
 
 @media only screen and (max-width: 600px){
 	.hero h1{
-		z-index: 2;
+		display: none;
+	}
+
+	.name{
 		position: absolute;
 		top: 80%;
-		left: 45%;
-		transform: translate(-50%,-50%);
-		font-size: 4em;
+		left: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 3em;
+	}
+	
+	.name .flex-item{
+		flex: 1;
+		z-index: 3;
+		background: black;
+		color: white;
+		padding: 0 10px;
+		margin: 2px;
 	}
 
 	.hero img{
@@ -116,9 +157,6 @@ body{
 	}
 }
 
-.hero h1 a{
-	color: black;
-}
 
 /*SOCIAL MEDIA ICONS START*/
 
