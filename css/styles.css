@@ -159,7 +159,7 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-	.nav-item:not(:last-child){
+	.nav-item{
 		background: rgba(255,255,255,0.9);
 		border: 2px solid #1C6EA4;
 		border-radius: 15px;
