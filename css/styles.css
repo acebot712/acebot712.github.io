@@ -158,6 +158,14 @@ body{
 	border-radius: 0px 15px 15px 0px;
 }
 
+@media only screen and (max-width: 600px) {
+	.nav-item:not(:last-child){
+		background: rgba(255,255,255,0.9);
+		border: 2px solid #1C6EA4;
+		border-radius: 15px;
+	}
+}
+
 .bg{
 	background-image: url("../assets/Home Page.png");
 	height: 100%;
