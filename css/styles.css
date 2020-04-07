@@ -1,0 +1,201 @@
+html{
+	height: 100%;
+}
+
+/*
+* Uncomment for Image 
+body { 
+  color: white;
+  height: 100%;
+} */
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+/* LANDING PAGE VIDEO ANIMATION */
+.hero{
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img{
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 100%;
+    width: 90%;
+    z-index: 1;
+    object-fit: cover;
+    mix-blend-mode: screen;
+	animation: reveal 1s ease forwards,swing 3s ease-in-out infinite alternate-reverse;
+	/* ,swing 3s ease-in-out infinite alternate-reverse <-- Add this for rotate */
+	opacity: 0;
+	border: 1px solid white;
+}
+
+
+.hero video{
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 100%;
+    width: 90%;
+	animation: reveal 1s ease 0.5s forwards,swing 3s ease-in-out infinite alternate-reverse;
+	/* ,swing 3s ease-in-out infinite alternate-reverse <-- Add this for rotate */
+	opacity: 0;
+	border: 1px solid white;
+}
+
+@keyframes reveal{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes swing{
+    from{
+        transform: rotateZ(0deg);
+    }to{
+        transform: rotateZ(3deg);
+    }
+}
+
+
+/* TYPEWRITER EFFECT */
+.hero h1{
+	z-index: 2;
+	position: absolute;
+	top: 80%;
+	left: 45%;
+	transform: translate(-50%,-50%);
+	font-size: 5em;
+}
+
+.hero h1 a{
+	color: black;
+}
+
+/*SOCIAL MEDIA ICONS START*/
+
+.social-media-icons ul {
+    list-style: none;
+    text-align: center;
+}
+
+.social-media-icons a {	
+	display: inline-block;
+	text-decoration: none;
+	background: white;
+	margin: 5px;
+}
+
+.social-media-icons a .fa-linkedin-square {
+	color: #016197;
+}
+
+.social-media-icons a .fa-facebook-square {
+	color: #4064AD;
+}
+
+.social-media-icons a .fa-instagram {
+	color: #d6249f;
+}
+
+.social-media-icons a .fa-twitter-square {
+	color: #4099FF;
+}
+
+.social-media-icons a .fa-youtube-square {
+	color: #b31217;
+}
+
+.social-media-icons a i:hover{
+	color: black;
+}
+
+/* SOCIAL MEDIA ICONS END*/
+
+.nav-item:not(:last-child){
+	background: rgba(255,255,255,0.9);
+	border-right: 2px solid #1C6EA4;
+	border-top: 2px solid #1C6EA4;
+	border-bottom: 2px solid #1C6EA4;
+}
+
+.nav-item:last-child{
+	background: rgba(255,255,255,0.9);
+	border-top: 2px solid #1C6EA4;
+	border-bottom: 2px solid #1C6EA4;
+	border-right: 2px solid #1C6EA4;
+	border-radius: 0px 15px 15px 0px;
+}
+
+.nav-item:first-child{
+	border-radius: 15px 0px 0px 15px;
+	border-left: 2px solid #1C6EA4;
+}	
+
+.nav-item:hover{
+	background: rgba(255,255,255,1);
+	font-weight: bold;
+}
+
+.nav-item:first-child:hover{
+	background: rgba(255,255,255,1);
+	font-weight: bold;
+	border-radius: 15px 0px 0px 15px
+}
+
+.nav-item:hover:last-child{
+	background: rgba(255,255,255,1);
+	font-weight: bold;
+	border-radius: 0px 15px 15px 0px;
+}
+
+.bg{
+	background-image: url("../assets/Home Page.png");
+	height: 100%;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	position: relative;
+  	z-index: -1;
+}
+
+.navbar{
+	text-align: center;
+  	position: absolute;
+  	top: 0%;
+  	left: 50%;
+  	transform: translateX(-50%);
+  	width: 95%;	
+	position: absolute;
+	z-index: 2;
+}
+
+#profilePicture{
+	width: 100px;
+	float: left;
+	padding: 10px;
+	margin-right: 15px;
+}
+
+h1{
+	font-family: "Bebas Neue";
+	padding: 10px;
+	margin: 10px;
+}
+
+#description{
+	border: 1px solid black;
+	height: 120px;
+	margin: 10px 100px 10px 100px;
+	padding: 5px;
+}
+

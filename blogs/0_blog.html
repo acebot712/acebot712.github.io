@@ -1,0 +1,278 @@
+<!-- 
+	INSTRUCTIONS FOR AUTHOR
+=================================
+Do not change the header here.
+It is not necessary to provide title,author,date here but rather do it blogScript.js.
+However writing it is convenient. 
+Date format is YYYYMMDD
+
+PrismJS is used for code formatting
+Use the format <pre><code> tags as is by changing languages as you require. If something seems broken,
+head over to https://cdnjs.com/libraries/prism to copy any missing libraries.
+To change theme just make changes to the link:-
+https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-tomorrow.min.css
+
+Head over to https://prismjs.com/index.html to find information on how to use plugins.
+
+In the second div of the container (after "Abhijoy's Blog"), make sure to set the variables isBlogArticle
+and blogID carefully and ensure the blog ID reflects in blogScript.js.
+
+Special CSS (https://css-tricks.com/hash-tag-links-padding/) is added to header to make sure they are visible
+when anchoring to them.
+
+All sections use a latex style seperation, i.e.,
+<section class="section">
+	<section class="subsection">
+		<section class="subsubsection">
+		</section>
+	</section>
+</section>
+
+So much so the headers of each section are in the following format:-
+-section number-	-section title-
+
+The sections have id="-section number-"
+
+All images should be inside <figure> with <figcaption> inside it.
+Recommended Video ratio 560:315
+
+Tables must come with the caption tag:-
+<table>
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+</table>
+--> 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- PrismJS css -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	
+	<title>ABHIJOY SARKAR</title>
+</head>
+<body>
+		
+		<!-- START OF HEADER -->
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+		  <!-- Navbar content -->
+		  <a class="navbar-brand" href="../pages/index.html"><img alt="Abhijoy Sarkar" src="../assets/AS Red.svg" width="60px" /></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="../pages/about.html">About <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="../pages/blog.html">Blog</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../pages/projects.html">Projects</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../pages/cv.html">CV</a>
+		      </li>
+		    </ul>
+		
+		  </div>
+		</nav>
+		<!-- END OF HEADER -->
+
+
+	<div class="container">
+		<div>
+			<center><h1>Abhijoy's Blog</h1></center>
+		</div>
+		<div class="row">
+			<!-- To puts ads later here -->
+			<div class="col"></div>
+			<div class="col-10">
+				<span id="isBlogArticle" style="display: none">1</span>
+				<span id="blogID" style="display: none">0</span>
+				<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+				
+				<!-- BEGIN WRITEUP FROM HERE -->
+
+				<h2 id="heading">Colorful Image Colorization</h2>
+				<p>By <em id="author">Abhijoy Sarkar</em> on <em id="date">20200323</em></p>  <!-- YYYYMMDD Date string passed to blogScript.js -->
+				<hr>
+
+				<section class="section">
+					<h3>
+						Contents
+					</h3>
+					<ul>
+						<li><a href="#1">1 Introduction</a></li>
+						<li><a href="#2">2 Preperations</a></li>
+						<ul>
+							<li><a href="#2.1">To study</a></li>
+							<li><a href=#2.2>Environment setup</a></li>
+						</ul>
+						<li><a href="#3">3 Code</a></li>
+						<li><a href="#4">4 Observations</a></li>
+						<li><a href="#5">5 What's Next</a></li>
+					</ul>
+				</section>
+
+				<section id="1" class="section">
+					<h3>1 Introduction</h3>
+					<p>Tic Tac Toe is one the best toy problems available to quickly
+						test out algorithms for artificial intelligence. Here we are going to implement one of the popular
+						algorithms out there for adverserial search, the minimax algorithm. This algorithm has many interesting
+						strong points and caveats and if this is your first time coding a bot you may find that our bot
+						actually is able to think. We are going to have two different game modes:- 
+						<ol>
+							<li>AI vs AI</li>
+							<li>AI vs Human</li>
+						</ol>
+
+						The board size of tic tac toe could scaled to any length but due to computational constraints, we
+						will restrict ourselves to playing 3 * 3, 4 * 4 and 5 * 5 boards. So without further ado, lets get
+						started.
+					</p.>
+				</section>
+				<hr>
+				<section id="2" class="section">
+					<h3>2 Preperations</h3>
+					<section id="2.1" class="subsection">
+						<h4>2.1 To study</h4>
+						<p>The theory behind the minimax algorithm is a necassity. Even though I will
+							explain each and every line of the code, it still just scratches the surface of 
+							the minimax algorithm is. This post and the subsequent posts on the same topic
+							is mostly about experimenting with the algorithm and eventually creating some
+							kind of AI that is unbeatable at tic tac toe. 
+						</p>
+					</section>
+					<section id="2.2" class="subsection">
+						<h4>2.2 Environment setup</h4>
+						<p>
+							The good news here that there is no crazy directory structure and all our code
+							would be in one file. At the time of writing this post, I used python 3.7.4 for the implementation.
+						</p>
+					</section>
+				</section>
+				<hr>
+
+				<section class="section">
+					<h3>3 Code</h3>
+					<p>We are going to set the human player as the minimizing player and the AI as the maximizing player.
+						To identify we enumerate the human player as -1 and the AI as +1 for the AI vs HUMAN mode.
+						When we play AI vs AI, we will make one of the AIs the minimizing player. Thus the choice here does not
+						matter. Lets start with whatever information we have so far and try take the required inputs from
+						the human player.
+					</p>
+
+					<span>Python</span>
+					<pre class="line-numbers" data-start="1">
+						<code class="language-python">
+							from math import inf as infinity
+
+							HUMAN = -1
+							COMP = +1
+
+							print("1. AI-1 vs AI-2")
+							print("2. AI vs Human")
+							game_mode = int(input())
+
+							size = int(input("Enter board size: "))
+						</code>
+					</pre>
+					
+				
+					<p>
+					Based on the <code class="language-python">game_mode</code> provided
+					by the <code class="language-python">HUMAN</code> we take inputs for setting the 
+					intelligence (depth, more on this later), of the AI/AIs
+					that shall play the game.
+					</p>
+
+					<pre class="line-numbers" data-start="12">
+						<code class="language-python">
+							if game_mode == 1:
+								depth = int(input("Enter intelligence depth for AI-1 (recommended <= 5): "))
+								depth2 = int(input("Enter intelligence depth for AI-2 (recommended <= 5): "))
+								human_choice = input("Choose X or O for AI-2: ").upper() 
+							elif game_mode == 2:
+								depth = int(input("Enter intelligence depth of AI (recommended <= 5): "))
+								human_choice = input("Choose X or O: ").upper()
+							else:
+								print("Choose 1 or 2...")	
+						</code>
+					</pre>
+
+					<p>
+					We the create a <code class="language-python">board</code> variable which would represent are
+					environment state. It is a 2D array which is filled with 0s to signify that cells are empty.
+					</p>
+
+					<pre class="line-numbers" data-start="22">
+						<code class="language-python">
+							board = [[0 for i in range(size)] for j in range(size) ]
+						</code>
+					</pre>
+
+					<p>Eventually the maximizing player inputs +1 in the cells of the <code class="language-python">board</code>
+					while the minimizing player inputs a -1.
+					</p>
+
+
+				</section>
+			
+				<center>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/QTbm8oeLhKs?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>				
+				</center>
+				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
+			
+			</div>
+			<!-- To puts ads later here -->
+			<div class="col"></div>
+		</div>
+	</div>
+
+
+	
+
+	<!-- Bootstrap scripts -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+	<!-- PrismJS scripts start -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-language/prism-show-language.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/download-button/prism-download-button.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/file-highlight/prism-file-highlight.min.js"></script>
+	
+	<!-- Use data-src attribute in pre to highlight file -->
+	<!-- For download button data-download-link data-download-link-label="Download this file" -->
+	
+	<!-- PrismJS scripts end -->
+	<script src="../scripts/blogScript.js"></script>
+	<script type="text/javascript">
+		$(window).scroll(function(){
+	      $('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
+	    });
+	</script>
+</body>
+</html>

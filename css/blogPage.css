@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box
+}
+
+body{
+	color: white;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top: 70px;
+}
+
+.navbar.scrolled{
+  background:#000;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+}
+
+/*SOCIAL MEDIA ICONS START*/
+
+.social-media-icons ul {
+    list-style: none;
+    text-align: center;
+}
+
+.social-media-icons a { 
+  display: inline-block;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.social-media-icons a .fa-linkedin-square {
+  color: #016197;
+}
+
+.social-media-icons a .fa-facebook-square {
+  color: #4064AD;
+}
+
+.social-media-icons a .fa-instagram {
+  color: #d6249f;
+}
+
+.social-media-icons a .fa-twitter-square {
+  color: #4099FF;
+}
+
+.social-media-icons a .fa-youtube-square {
+  color: #b31217;
+}
+
+.social-media-icons a i:hover{
+  color: white;
+}
+
+/* SOCIAL MEDIA ICONS END*/
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#particles-js{
+  height: 100%;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+}
+
+#ul.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  z-index: 1;
+  position: absolute;
+}
+
+.card {
+  margin: 20px 0;
+  color: black;
+  box-shadow: 2px 4px 25px rgba(255, 255, 255, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+}
+
+.card:hover {
+  box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
+  transform: translate3d(0, -2px, 0);
+}
+
+.card img{
+	filter: grayscale(100%);
+}
+
+.card:hover > img{
+	filter: grayscale(0%);
+}
+
+.card .card-body{
+  word-wrap: break-word;
+  padding-top: 0.5rem;
+}
+
+.card a{
+  position: absolute;
+  bottom: 10px;
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.card a:hover{
+  background: #24243e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 15px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  box-shadow: 2px 4px 25px rgba(255, 255, 255, .1);
+  transition: all .2s linear;
+}
+
+#myBtn:hover {
+  box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
+  transform: translate3d(0, -2px, 0);
+}

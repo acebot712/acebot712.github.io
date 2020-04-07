@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box
+}
+
+body{
+	color: white;
+  padding-top: 70px;
+  transition: all 1s ease-in-out;
+}
+
+.navbar.scrolled{
+  background:#000;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+}
+
+#particles-js{
+  height: 100%;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: relative;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/*SOCIAL MEDIA ICONS START*/
+
+.social-media-icons ul {
+    list-style: none;
+    text-align: center;
+}
+
+.social-media-icons a { 
+  display: inline-block;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.social-media-icons a .fa-linkedin-square {
+  color: #016197;
+}
+
+.social-media-icons a .fa-facebook-square {
+  color: #4064AD;
+}
+
+.social-media-icons a .fa-instagram {
+  color: #d6249f;
+}
+
+.social-media-icons a .fa-twitter-square {
+  color: #4099FF;
+}
+
+.social-media-icons a .fa-youtube-square {
+  color: #b31217;
+}
+
+.social-media-icons a i:hover{
+  color: white;
+}
+
+/* SOCIAL MEDIA ICONS END*/
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}

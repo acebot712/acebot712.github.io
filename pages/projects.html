@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161519158-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-161519158-1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../css/projects.css">
+  <title>Abhijoy Sarkar</title>
+</head>
+<body>
+  <span id="isBlogArticle" style="display: none">0</span>  <!-- Declare if it is a blog or not -->
+    
+    <!-- START OF HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <!-- Navbar content -->
+      <a class="navbar-brand" href="../pages/index.html"><img alt="Abhijoy Sarkar" src="../assets/AS White.svg" width="60px" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./blog.html">Blog</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cv.html">CV</a>
+          </li>
+          
+        </ul>
+        <div class="my-3 my-lg-0 social-media-icons">
+          <ul class="list-inline col-xs-12">
+              <a href="https://www.linkedin.com/in/abhijoy-sarkar/" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+              <a href="https://www.instagram.com/sarkarabhijoy/?hl=en" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+            <a href="https://www.facebook.com/abhijoy.sarkar.1" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="https://twitter.com/AbhijoySarkar" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://www.youtube.com/channel/UCsawRrUXiz3WR4Auj4ddgVg/featured?view_as=subscriber" target="_blank"><i class="fa fa-youtube-square fa-2x"></i></a>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END OF HEADER -->
+
+    <div class="container">
+      <div>
+        <h1>Abhijoy's Projects</h1>
+      </div>
+      <table id="dtBasicExample" class="table table-dark table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th class="th-sm">#
+            </th>
+            <th class="th-sm">Title
+            </th>
+            <th class="th-sm">Description
+            </th>
+            <th class="th-sm">Code
+            </th>
+            <th class="th-sm">Blog
+            </th>
+            <th class="th-sm">Presentation
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Copy from here -->
+        <tr>
+          <td>1</td>
+          <td>LSTMSA</td>
+          <td>A novel approach to stock market prediction using LSTMs and Sentiment Analysis</td>
+          <td><a href="#">[code]</a></td>
+          <td><a href="#">[blog]</a></td>
+          <td><a href="https://www.slideshare.net/abhijoysarkar1/lstmsa-a-novel-approach-to-stock-market-prediction-using-lstm-and-sentiment-analysis">[presentation]</a></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Colorful Image Colorization</td>
+          <td>Implementation based on <a href="https://richzhang.github.io/colorization/">Zhang et al.'s paper</a></td>
+          <td><a href="#">[code]</a></td>
+          <td><a href="#">[blog]</a></td>
+          <td><a href="#">[presentation]</a></td>
+        </tr>
+        <!-- Copy upto here -->
+      </tbody>
+    </table>
+
+    <div>
+      <h1>Code Snippets</h1>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(window).scroll(function(){
+      $('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
+    });
+  </script>
+</body>
+</html>
