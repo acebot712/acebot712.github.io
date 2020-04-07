@@ -26,7 +26,7 @@ body{
     left: 0;
     top: 10%;
     height: 100%;
-    width: 90%;
+    width: auto;
     z-index: 1;
     object-fit: cover;
     mix-blend-mode: lighten;
@@ -42,7 +42,7 @@ body{
     left: 0;
     top: 10%;
 	height: 100%;
-	width: 90%;
+	width: auto;
 	animation: reveal 1s ease 0.5s forwards,swing 3s ease-in-out infinite alternate-reverse;
 	/* ,swing 3s ease-in-out infinite alternate-reverse <-- Add this for rotate */
 	opacity: 0;
