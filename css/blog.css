@@ -6,8 +6,9 @@ body {
 }
 
 
-a{
+section ul li a{
   color: #fff;
+  text-decoration: underline;
 }
 
 .navbar.scrolled{
