@@ -131,7 +131,7 @@ function randomColor(){
 
 function setColor(){
 	document.querySelector("body").style.background = randomColor();
-	setTimeout(setColor,5000);
+	setTimeout(setColor,30000);
 }
 
 //==============================DEFINITIONS ABOVE THIS LINE===========================================================================
