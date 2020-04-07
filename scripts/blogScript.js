@@ -124,6 +124,7 @@ function scrollFunction() {
 
 var i = 0;
 
+
 function randomColor(){
 	i = (i+1)%noOfBackgrounds;
 	return "url(../assets/background_" + i.toString() + ".jpg)"+" center";
@@ -131,17 +132,28 @@ function randomColor(){
 
 function setColor(){
 	document.querySelector("body").style.background = randomColor();
-	setTimeout(setColor,30000);
+}
+
+// This is how to use media queries in JavaScript
+var x = window.matchMedia("(max-width: 600px)")
+function checker(x){
+	if(x.matches){
+		document.querySelector("body").style.background = "url(../assets/background_0.jpg) center";
+	}else{
+		setTimeout(setColor,1000);
+	}
+	setTimeout(checker,1000,x)
 }
 
 //==============================DEFINITIONS ABOVE THIS LINE===========================================================================
+
 
 var isBlogArticle = document.getElementById("isBlogArticle").innerText
 if(isBlogArticle == 1){
 	setDate(document.getElementById("blogID").innerText)
 	setAuthor(document.getElementById("blogID").innerText)
 	setTitle(document.getElementById("blogID").innerText)
-	setColor()
+	checker(x)
 }else{
 	populateBlogList();
 }
