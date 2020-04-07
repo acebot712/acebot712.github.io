@@ -122,9 +122,16 @@ function scrollFunction() {
 	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
+  
+function sleep(milliseconds) {
+	const date = Date.now();
+	let currentDate = null;
+	do {
+		currentDate = Date.now();
+	} while (currentDate - date < milliseconds);
+}
+	
 var i = 0;
-
-
 function randomColor(){
 	i = (i+1)%noOfBackgrounds;
 	return "url(../assets/background_" + i.toString() + ".jpg)"+" center";
@@ -136,11 +143,13 @@ function setColor(){
 
 // This is how to use media queries in JavaScript
 var x = window.matchMedia("(max-width: 600px)")
+document.querySelector("body").style.background = "url(../assets/background_0.jpg) center"
 function checker(x){
 	if(x.matches){
 		document.querySelector("body").style.background = "url(../assets/background_0.jpg) center";
 	}else{
-		setTimeout(setColor,1000);
+		sleep(30000);
+		setColor();
 	}
 	setTimeout(checker,1000,x)
 }
