@@ -122,6 +122,11 @@
 				document.querySelector("body").style.visibility = "visible"; 
 			} 
 		}; 
+
+		$('button.navbar-toggler').click(function(){
+			$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+			
+		});
 	</script>
 </body>
 </html>
