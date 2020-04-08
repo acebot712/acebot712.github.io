@@ -87,8 +87,15 @@
   <script type="text/javascript" src="../scripts/about.js"></script>
   <script type="text/javascript">
     $(window).scroll(function(){
-      $('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
-    });
+		if($('button.navbar-toggler').attr('aria-expanded')=="false")
+			$('nav').toggleClass('scrolled', $(this).scrollTop() > 5);  
+		});
+
+		$('button.navbar-toggler').click(function(){
+			if($(window).scrollTop() <= 5){
+				$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+			}
+		});
   </script>
 
 </body>

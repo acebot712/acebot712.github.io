@@ -1,13 +1,14 @@
-* {
-  box-sizing: border-box
+body { 
+  padding-top: 70px;
+  height: 100%;
+  color: #fff;
+  transition: all 1s ease-in-out;
 }
 
-body{
-	color: white;
-  background: #232526;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding-top: 70px;
+
+section ul li a{
+  color: #fff;
+  text-decoration: underline;
 }
 
 .navbar:not([scrolled]){
@@ -15,117 +16,42 @@ body{
 }
 
 .navbar.scrolled{
-  background:#000;
+  background:#fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
               0 2px 2px rgba(0,0,0,0.15), 
               0 4px 4px rgba(0,0,0,0.15), 
               0 8px 8px rgba(0,0,0,0.15);
 }
 
-/*SOCIAL MEDIA ICONS START*/
-
-.social-media-icons ul {
-    list-style: none;
-    text-align: center;
-}
-
-.social-media-icons a { 
-  display: inline-block;
-  text-decoration: none;
-  margin: 5px;
-}
-
-.social-media-icons a .fa-linkedin-square {
-  color: #016197;
-}
-
-.social-media-icons a .fa-facebook-square {
-  color: #4064AD;
-}
-
-.social-media-icons a .fa-instagram {
-  color: #d6249f;
-}
-
-.social-media-icons a .fa-twitter-square {
-  color: #4099FF;
-}
-
-.social-media-icons a .fa-youtube-square {
-  color: #b31217;
-}
-
-.social-media-icons a i:hover{
-  color: white;
-}
-
-/* SOCIAL MEDIA ICONS END*/
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#particles-js{
-  height: 100%;
-  background: #232526;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  position: relative;
-}
-
-#ul.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  z-index: 1;
-  position: absolute;
-}
-
-.card {
-  margin: 20px 0;
-  color: black;
-  box-shadow: 2px 4px 25px rgba(255, 255, 255, .1);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all .2s linear;
-}
-
-.card:hover {
-  box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
-  transform: translate3d(0, -2px, 0);
-}
-
-.card img{
-	filter: grayscale(100%);
-}
-
-.card:hover > img{
-	filter: grayscale(0%);
-}
-
-.card .card-body{
-  word-wrap: break-word;
-  padding-top: 0.5rem;
-}
-
-.card a{
-  position: absolute;
-  bottom: 10px;
+/* Comment this out to remove */
+.container .row div:nth-child(2){
   background: #0f0c29;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to right, rgb(36, 36, 62), rgb(48, 43, 99), rgb(15, 12, 41));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, rgba(36, 36, 62,0.8), rgba(48, 43, 99,0.8), rgba(15, 12, 41,0.8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+  padding: 0 50px;
+  margin-bottom: 50px;
 }
 
-.card a:hover{
-  background: #24243e;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+h1{
+  color: #fff;
+	padding: 10px;
+	margin: 10px;
 }
 
+h2{
+  padding-top: 10px;
+  margin-top: 10px;
+  font-style: italic;
+}
 
+/* Go to top button */
 #myBtn {
   display: none;
   position: fixed;
@@ -147,4 +73,44 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 #myBtn:hover {
   box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
   transform: translate3d(0, -2px, 0);
+}
+
+.section::before,.subsection::before,.subsubsection::before,.subsubsubsection::before { 
+  display: block; 
+  content: ""; 
+  margin-top: -100px; 
+  height: 100px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+.section{
+  margin-top: 40px;
+}
+
+.subsection{
+  margin-top: 20px;
+}
+
+.subsubsection{
+  margin-top: 10px;
+}
+
+/* PrismJS settings */
+/* For copy and language */
+.toolbar,.toolbar > *{
+  margin: 5px;
+  padding: 0;
+}
+
+pre{
+  z-index: 1;
+}
+
+pre[class*=language-].line-numbers{
+  font-size: 0.8em;
+}
+
+:not(pre)>code[class*=language-]{
+  font-size: 0.8em;
 }
