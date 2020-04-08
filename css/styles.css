@@ -164,6 +164,18 @@ body{
 		border: 1px solid white;
 	}
 
+	.hero video{
+		position: absolute;
+		left: 0;
+		top: 10%;
+		height: 100%;
+		width: auto;
+		animation: reveal 1s ease 0.5s forwards;
+		/* ,swing 3s ease-in-out infinite alternate-reverse <-- Add this for rotate */
+		opacity: 0;
+		border: 1px solid white;
+	}
+	
 	.name{
 		position: absolute;
 		top: 80%;
@@ -181,6 +193,10 @@ body{
 		right: 20%;
 		transform: translate(-50%,-50%);
 		font-size: 2em;
+	}
+	
+	.credits{
+		display: none;
 	}
 	
 }
