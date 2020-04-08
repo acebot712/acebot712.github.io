@@ -279,9 +279,11 @@ Tables must come with the caption tag:-
 		});
 
 		$('button.navbar-toggler').click(function(){
-			$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
-			$('nav').toggleClass('navbar-dark', $('button.navbar-toggler').attr('aria-expanded')=="true");
-			$('nav').toggleClass('navbar-light', $('button.navbar-toggler').attr('aria-expanded')=="false");
+			if($(window).scrollTop() <= 5){
+				$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+				$('nav').toggleClass('navbar-dark', $('button.navbar-toggler').attr('aria-expanded')=="true");
+				$('nav').toggleClass('navbar-light', $('button.navbar-toggler').attr('aria-expanded')=="false");
+			}
 		});
 	</script>
 
