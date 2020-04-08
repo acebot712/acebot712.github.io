@@ -6,6 +6,11 @@ body{
 	color: white;
   padding-top: 70px;
   transition: all 1s ease-in-out;
+  background: url('../assets/about_0.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .navbar:not([scrolled]){
@@ -72,8 +77,3 @@ body{
 }
 
 /* SOCIAL MEDIA ICONS END*/
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
-}
