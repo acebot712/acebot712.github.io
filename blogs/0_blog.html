@@ -59,14 +59,14 @@ Tables must come with the caption tag:-
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
 	
-	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/blogPage.css">
 	
 	<title>ABHIJOY SARKAR</title>
 </head>
 <body>
-		
+		<div id="loader"></div>
 		<!-- START OF HEADER -->
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 		  <!-- Navbar content -->
 		  <a class="navbar-brand" href="../pages/index.html"><img alt="Abhijoy Sarkar" src="../assets/AS Red.svg" width="60px" /></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +109,7 @@ Tables must come with the caption tag:-
 				<!-- BEGIN WRITEUP FROM HERE -->
 
 				<h2 id="heading">Colorful Image Colorization</h2>
-				<p>By <em id="author">Abhijoy Sarkar</em> on <em id="date">20200323</em></p>  <!-- YYYYMMDD Date string passed to blogScript.js -->
+				<p>By <em id="author">Abhijoy Sarkar</em> on <em id="date"></em></p>  <!-- YYYYMMDD Date string passed to blogScript.js -->
 				<hr>
 
 				<section class="section">
@@ -118,10 +118,10 @@ Tables must come with the caption tag:-
 					</h3>
 					<ul>
 						<li><a href="#1">1 Introduction</a></li>
-						<li><a href="#2">2 Preperations</a></li>
+						<li><a href="#2">2 Preparations</a></li>
 						<ul>
-							<li><a href="#2.1">To study</a></li>
-							<li><a href=#2.2>Environment setup</a></li>
+							<li><a href="#2.1">2.1 To study</a></li>
+							<li><a href=#2.2>2.2 Environment setup</a></li>
 						</ul>
 						<li><a href="#3">3 Code</a></li>
 						<li><a href="#4">4 Observations</a></li>
@@ -148,7 +148,7 @@ Tables must come with the caption tag:-
 				</section>
 				<hr>
 				<section id="2" class="section">
-					<h3>2 Preperations</h3>
+					<h3>2 Preparations</h3>
 					<section id="2.1" class="subsection">
 						<h4>2.1 To study</h4>
 						<p>The theory behind the minimax algorithm is a necassity. Even though I will
@@ -169,7 +169,7 @@ Tables must come with the caption tag:-
 				<hr>
 
 				<section class="section">
-					<h3>3 Code</h3>
+					<h3 id="3">3 Code</h3>
 					<p>We are going to set the human player as the minimizing player and the AI as the maximizing player.
 						To identify we enumerate the human player as -1 and the AI as +1 for the AI vs HUMAN mode.
 						When we play AI vs AI, we will make one of the AIs the minimizing player. Thus the choice here does not
@@ -233,9 +233,6 @@ Tables must come with the caption tag:-
 
 				</section>
 			
-				<center>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/QTbm8oeLhKs?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>				
-				</center>
 				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
 			
 			</div>
@@ -252,6 +249,32 @@ Tables must come with the caption tag:-
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	
+	<script type="text/javascript">
+		document.onreadystatechange = function() { 
+			if (document.readyState !== "complete") { 
+				document.querySelector("body").style.visibility = "hidden"; 
+				document.querySelector("#loader").style.visibility = "visible"; 
+			} else { 
+				document.querySelector("#loader").style.display = "none"; 
+				document.querySelector("body").style.visibility = "visible"; 
+			} 
+		}; 
+
+		$(window).scroll(function(){
+			if($('button.navbar-toggler').attr('aria-expanded')=="false"){
+				$('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
+				$('nav').toggleClass('navbar-dark', $(this).scrollTop() <= 5);
+				$('nav').toggleClass('navbar-light', $(this).scrollTop() > 5);
+			}	
+		});
+
+		$('button.navbar-toggler').click(function(){
+			$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+			$('nav').toggleClass('navbar-dark', $('button.navbar-toggler').attr('aria-expanded')=="true");
+			$('nav').toggleClass('navbar-light', $('button.navbar-toggler').attr('aria-expanded')=="false");
+		});
+	</script>
+
 	<!-- PrismJS scripts start -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
@@ -268,11 +291,7 @@ Tables must come with the caption tag:-
 	<!-- For download button data-download-link data-download-link-label="Download this file" -->
 	
 	<!-- PrismJS scripts end -->
-	<script src="../scripts/blogScript.js"></script>
-	<script type="text/javascript">
-		$(window).scroll(function(){
-	      $('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
-	    });
-	</script>
+	<script src="../scripts/blogScript.js" defer></script>
+	
 </body>
 </html>
