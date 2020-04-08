@@ -131,28 +131,15 @@ function sleep(milliseconds) {
 	} while (currentDate - date < milliseconds);
 }
 	
-var i = 0;
-function randomColor(){
-	i = (i+1)%noOfBackgrounds;
-	return "url(../assets/background_" + i.toString() + ".jpg)"+" center";
+function randomColor(){	
+	return "url(../assets/background_" + Math.floor(Math.random() * noOfBackgrounds).toString() + ".jpg)"+" center";
 }
 
 function setColor(){
 	document.querySelector("body").style.background = randomColor();
+	setTimeout(setColor,60000);
 }
 
-// This is how to use media queries in JavaScript
-var x = window.matchMedia("(max-width: 600px)")
-
-function checker(x){
-	if(x.matches){
-		document.querySelector("body").style.background = "url(../assets/background_0.jpg) center";
-	}else{
-		sleep(30000);
-		setColor();
-	}
-	setTimeout(checker,1000,x)
-}
 
 //==============================DEFINITIONS ABOVE THIS LINE===========================================================================
 
@@ -163,7 +150,7 @@ if(isBlogArticle == 1){
 	setAuthor(document.getElementById("blogID").innerText)
 	setTitle(document.getElementById("blogID").innerText)
 	document.querySelector("body").style.background = "url(../assets/background_0.jpg) center" //default
-	checker(x)
+	setColor()
 }else{
 	populateBlogList();
 }

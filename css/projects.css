@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body{
@@ -12,6 +12,24 @@ body{
 
 table{
   border-radius: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+}
+
+@media only screen and (max-width: 600px){
+  table{
+    table-layout: fixed;
+  }
+}
+
+th,td{
+  word-wrap: break-word;
+}
+
+.navbar:not([scrolled]){
+  transition: all 0.5s linear;
 }
 
 .navbar.scrolled{
@@ -20,6 +38,7 @@ table{
               0 2px 2px rgba(0,0,0,0.15), 
               0 4px 4px rgba(0,0,0,0.15), 
               0 8px 8px rgba(0,0,0,0.15);
+  
 }
 
 /*SOCIAL MEDIA ICONS START*/
@@ -60,8 +79,3 @@ table{
 }
 
 /* SOCIAL MEDIA ICONS END*/
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
-}

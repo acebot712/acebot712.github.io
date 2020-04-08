@@ -268,10 +268,18 @@ Tables must come with the caption tag:-
 	<script src="../scripts/blogScript.js"></script>
 	<script type="text/javascript">
 		$(window).scroll(function(){
-		  $('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
-		  $('nav').toggleClass('navbar-dark', $(this).scrollTop() <= 5);
-		  $('nav').toggleClass('navbar-light', $(this).scrollTop() > 5);	
-	    });
+			if($('button.navbar-toggler').attr('aria-expanded')=="false"){
+				$('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
+				$('nav').toggleClass('navbar-dark', $(this).scrollTop() <= 5);
+				$('nav').toggleClass('navbar-light', $(this).scrollTop() > 5);
+			}	
+		});
+
+		$('button.navbar-toggler').click(function(){
+			$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+			$('nav').toggleClass('navbar-dark', $('button.navbar-toggler').attr('aria-expanded')=="true");
+			$('nav').toggleClass('navbar-light', $('button.navbar-toggler').attr('aria-expanded')=="false");
+		});
 	</script>
 </body>
 </html>
