@@ -119,6 +119,15 @@ body{
 	text-decoration: underline;
 }
 
+.credits{
+	z-index: 3;
+	color: black;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	font-size: 0.8em;
+}
+
 .name{
 	z-index: 3;
 	position: fixed;
@@ -191,6 +200,10 @@ body{
 		/* ,swing 3s ease-in-out infinite alternate-reverse <-- Add this for rotate */
 		opacity: 0;
 		border: 1px solid white;
+	}
+
+	.credits{
+		display: none;
 	}
 }
 
