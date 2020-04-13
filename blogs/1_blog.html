@@ -240,7 +240,68 @@ Tables must come with the caption tag:-
 					while the minimizing player inputs a -1.
 					</p>
 
+					<p>
+						We build a function that checks if any of the players has reached the winning state.
+                        This function should be generalized for the size of the board. Specifically, we try to
+                        detect if any player has filled the diagonals, rows, or columns on the board.
+					</p>
+					
+					<pre class="line-numbers" data-start="25">
+						<code class="language-python">
+							def wins(board,player):
+								# generalized
+								win_states = []
+								
+								# main diagonal
+								win_state = []
+								for row in range(len(board)):
+									win_state.append(board[row][row])
+								win_states.append(win_state)
+								
+								#other diagonal
+								win_state = []
+								for row in range(len(board)):
+									win_state.append(board[row][(len(board) - 1) - row])
+								win_states.append(win_state)
+								
+								# horizontals
+								for row in range(len(board)):
+									win_state = []
+									for col in range(len(board)):
+										win_state.append(board[row][col])
+									win_states.append(win_state)
+									
+								# verticals
+								for col in range(len(board)):
+									win_state = []
+									for row in range(len(board)):
+										win_state.append(board[row][col])
+									win_states.append(win_state)
+									
+								if [player]*len(board) in win_states:
+									return True
+								return False
+						</code>
+					</pre>
 
+					<p>
+						The function  returns <code class="language-python">True</code> if any
+						of the possible winning state has been acheived.
+					</p>
+
+					<p>
+						This minimax algorithm has a simple evaluation function. 
+					</p>
+					$$
+					Eval(board) = \begin{cases}-1 & wins(board,HUMAN) = True\\
+					+1 & wins(board,COMP) = True\\
+					0 & otherwise\end{cases}
+					$$
+					<p>
+						We shall analyze the problems
+						in the <a href="#4">Observations</a> section. Later we try
+						to tackle all of these problems by constructing more complex evaluation functions.
+					</p>				
 				</section>
 			
 				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
@@ -303,6 +364,12 @@ Tables must come with the caption tag:-
 	<!-- For download button data-download-link data-download-link-label="Download this file" -->
 	
 	<!-- PrismJS scripts end -->
+
+	<!-- Maths scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<!-- Maths scripts end -->
+
 	<script src="../scripts/blogScript.js" defer></script>
 	
 </body>

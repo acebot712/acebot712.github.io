@@ -43,7 +43,7 @@ body {
     100% { transform: rotate(360deg); }
     }
 
-section ul li a{
+section a{
   color: #fff;
   text-decoration: underline;
 }
