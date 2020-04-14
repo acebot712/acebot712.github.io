@@ -108,7 +108,7 @@ Get latex of equation from:- https://www.hostmath.com/
 		<!-- END OF HEADER -->
 
 
-	<div class="container">
+	<div class="container main">
 		<div>
 			<center><h1>Abhijoy's Blog</h1></center>
 		</div>
@@ -191,7 +191,6 @@ Get latex of equation from:- https://www.hostmath.com/
 						the human player.
 					</p>
 
-					<span>Python</span>
 					<pre class="line-numbers" data-start="1">
 						<code class="language-python">
 							from math import inf as infinity
@@ -562,9 +561,27 @@ Get latex of equation from:- https://www.hostmath.com/
 				</section>
 				<section id="4" class="section">
 					<h3>OBSERVATIONS</h3>
+					<p>
+						We observe that at lower values of depth, the algorithm tries to defeat the opponent rather than try
+						and win itself. Setting a <code class="language-python">depth = 2</code> ensures that with direct tactics
+						(filling up a row, column, or diagonal)
+						in one go does not work. However, the AI falters if traps are set (Fig. 21). We can create an unbeatable
+						AI for the 4x4 grid by setting <code class="language-python">depth = 4</code>. Here the is AI can foresee all possible traps that can be possibly set.
+						We conjecture that for a high value of depth, the AI can create its traps. However, the basic version of the
+						minimax algorithm does not prove feasible to verify this. We saw an effective branching factor to be 8.
+					</p>
 				</section>
 				<section id="5" class="section">
-					<h3>CONCLUSION</h3>
+					<h3>What's Next?</h3>
+					<p>
+						In this tutorial, we have successfully made an artificially intelligent bot that, given enough
+						computational power, never loses a tic tac toe game. We shall address some of the issues in 
+						<a href="4">Observations</a> in the next tutorial in this series. The next part tries to improve
+						the algorithm so that we can perform the same feat with	higher depth settings and lower computational resource usage.
+					</p>
+					<p>
+						<img src="https://clipartart.com/images/clipart-hurrah.jpg" />
+					</p>
 				</section>
 			
 				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
