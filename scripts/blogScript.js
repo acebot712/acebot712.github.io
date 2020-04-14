@@ -132,7 +132,7 @@ function sleep(milliseconds) {
 }
 	
 function randomColor(){	
-	return "url(../assets/background_" + Math.floor(Math.random() * noOfBackgrounds).toString() + ".jpg)"+" center";
+	return "url(../assets/background_" + Math.floor(Math.random() * noOfBackgrounds).toString() + ".jpg)"+" center top";
 }
 
 function setColor(){

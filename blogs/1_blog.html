@@ -6,6 +6,8 @@ It is not necessary to provide title,author,date here but rather do it blogScrip
 However writing it is convenient. 
 Date format is YYYYMMDD
 
+!NO NEED TO INCLUDE MATHJAX AND PRISMJS IF YOU ARE NOT USING IT
+
 PrismJS is used for code formatting
 Use the format <pre><code> tags as is by changing languages as you require. If something seems broken,
 head over to https://cdnjs.com/libraries/prism to copy any missing libraries.
@@ -44,6 +46,8 @@ Tables must come with the caption tag:-
     <th>Savings</th>
   </tr>
 </table>
+
+Get latex of equation from:- https://www.hostmath.com/
 --> 
 
 <!DOCTYPE html>
@@ -178,8 +182,8 @@ Tables must come with the caption tag:-
 				</section>
 				<hr>
 
-				<section class="section">
-					<h3 id="3">3 Code</h3>
+				<section id="3" class="section">
+					<h3>3 Code</h3>
 					<p>We are going to set the human player as the minimizing player and the AI as the maximizing player.
 						To identify we enumerate the human player as -1 and the AI as +1 for the AI vs HUMAN mode.
 						When we play AI vs AI, we will make one of the AIs the minimizing player. Thus the choice here does not
@@ -292,16 +296,275 @@ Tables must come with the caption tag:-
 					<p>
 						This minimax algorithm has a simple evaluation function. 
 					</p>
-					$$
-					Eval(board) = \begin{cases}-1 & wins(board,HUMAN) = True\\
-					+1 & wins(board,COMP) = True\\
-					0 & otherwise\end{cases}
-					$$
 					<p>
-						We shall analyze the problems
+						$$
+						Eval(board) = \begin{cases}-1 & wins(board,HUMAN) = True\\
+						+1 & wins(board,COMP) = True\\
+						0 & otherwise\end{cases}
+						$$
+					</p>
+					<p>
+						We shall analyze the problems of this approach
 						in the <a href="#4">Observations</a> section. Later we try
 						to tackle all of these problems by constructing more complex evaluation functions.
-					</p>				
+					</p>
+					<pre class="line-numbers" data-start="68">
+						<code class="language-python">
+							def evaluate(board):
+								if wins(board,HUMAN):
+									return -1
+								elif wins(board,COMP):
+									return +1
+								else:
+									return 0
+						</code>
+					</pre>
+					<p>
+						We shall design a few more helper functions.
+					</p>
+					<pre class="line-numbers" data-start="68">
+						<code class="language-python">
+							def empty_cells(state):
+								"""
+								Each empty cell will be added into cells' list
+								:param state: the state of the current board
+								:return: a list of empty cells
+								"""
+								cells = []
+
+								for x, row in enumerate(state):
+									for y, cell in enumerate(row):
+										if cell == 0:
+											cells.append([x, y])
+
+								return cells
+						</code>
+					</pre>
+					<p>
+						The above function helps checks for all the cells where a move has been made and
+						returns the possible valid moves at any turn.
+					</p>
+					<pre class="line-numbers" data-start="83">
+						<code class="language-python">
+							def children(board,player):
+								child_states = []
+								for empty_cell in empty_cells(board):
+									child = [row[:] for row in board]
+									child[empty_cell[0]][empty_cell[1]] = player
+									child_states.append(child)
+								return child_states
+						</code>
+					</pre>
+					<p>
+						The above code may look similar to an empty-cells function—however, the purpose
+						of this function to create children, which is turn-based.
+						The <code class="language-python">empty_cells</code> function will be used to
+						determine children based on how the players perceive what shall happen on their next turn.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="91">
+							<code class="language-python">
+								def game_over(board):
+									if wins(board,HUMAN) or wins(board,COMP) or not empty_cells(board):
+										return True
+									return False
+									
+								def printBoard(board,human_choice):
+									for row in board:
+										print("======"*size)
+										if human_choice == "X":
+											d = {
+												1: "O",
+												0: " ",
+												-1: "X"
+											}
+										else:
+											d = {
+												1: "X",
+												0: " ",
+												-1: "O"
+											}
+										string = [d[i] for i in row]
+										string[0] =  "  " + string[0]
+										print("  |  ".join(string))
+									print("======"*size)
+							</code>
+						</pre>
+					</p>
+					<p>
+						The above two functions are fairly simple with <code class="language-python">game_over</code>
+						detecting if a player has already won or there are no valid moves left while <code class="language-python">
+						printBoard</code> prints the board in a form readable by us.
+					</p>
+					<p>
+						We are finally ready to create the <code class="language-python">minimax</code> function which is
+						the heart of our program.
+					</p>
+					<p>
+						<figure>
+							<img src="../images/0_blog/game_tree.jpg" width="100%"/>
+							<figcaption><small>Figure 1: Game Tree for Tic Tac Toe</small></figcaption>
+						</figure>
+					</p>
+					<p>
+						To traverse an entire search tree of some unknown depth, we are better of using a recursive approach.
+						We traverse the tree in a top-down fashion until we reach a terminal node. Since there are two players involved,
+						the parent nodes select the child value that benefits them the most. If the parent is the minimizing player,
+						then it tries to reach a terminal node that returns a value of -1 while the maximizing player aims for a value of +1.
+						This alternating behavior of choosing a score for the node must be taken into account while performing the recursion.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="116">
+							<code class="language-python">
+								# COMP is maximizing player
+								def minimax(board,depth,player):
+									# base condition
+									if depth == 0 or game_over(board):
+										return evaluate(board),board
+									
+									best_move = None
+									if player == COMP:
+										max_score = -infinity
+										for child in children(board,player):
+											score,_ = minimax(child,depth - 1,HUMAN)
+											if score > max_score:
+												max_score = score
+												best_move = child
+												#print(max_score)
+										return max_score,best_move
+									else:
+										min_score = +infinity
+										for child in children(board,player):
+											score,_ = minimax(child,depth - 1,COMP)
+											if score < min_score:
+												min_score = score
+												best_move = child
+										return min_score,best_move
+							</code>
+						</pre>
+					</p>
+					<p>
+						Since we have two game modes, we create another small helper function that activates
+						the above algorithm only when an AI is playing.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="141">
+							<code class="language-python">
+								def ai_move(board,depth,player):
+								_, best_move = minimax(board,depth,player)
+								return best_move
+							</code>
+						</pre>
+					</p>
+					<p>
+						We can now write our driver code that shall utilize all the functions that we have defined up to here.
+						It is here we split the functionality of our driver code based on the game mode selected.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="145">
+							<code class="language-python">
+								if game_mode == 1:
+									if human_choice == 'O':
+										while not game_over(board):
+											printBoard(board,human_choice)
+											print("AI-1's Turn")
+											board = ai_move(board,depth,COMP)
+											printBoard(board,human_choice)
+											if game_over(board):
+												break
+											"""
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											"""
+											# comment 2 lines below uncomment above to play
+											
+											print("AI-2's Turn")
+											board = ai_move(board,depth2,HUMAN)
+											
+									else:
+										while not game_over(board):
+											printBoard(board,human_choice)
+											"""
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											printBoard(board,human_choice)
+											"""
+											# comment 3 lines below uncomment above to play
+											
+											print("AI-2's Turn")
+											board = ai_move(board,depth2,HUMAN)
+											printBoard(board,human_choice)
+											
+											if game_over(board):
+												break
+											print("AI-1's Turn")
+											board = ai_move(board,depth,COMP)
+								else:
+									if human_choice == 'O':
+										while not game_over(board):
+											printBoard(board,human_choice)
+											print("AI's Turn")
+											board = ai_move(board,depth,COMP)
+											printBoard(board,human_choice)
+											if game_over(board):
+												break
+											
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											
+											# comment 2 lines below uncomment above to play
+											"""
+											print("AI-2's Turn")
+											board = ai_move(board,HUMAN)
+											"""
+											
+									else:
+										while not game_over(board):
+											printBoard(board,human_choice)
+											
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											printBoard(board,human_choice)
+											
+											# comment 3 lines below uncomment above to play
+											"""
+											print("AI-2's Turn")
+											board = ai_move(board,HUMAN)
+											printBoard(board,human_choice)
+											"""
+											if game_over(board):
+												break
+											print("AI's Turn")
+											board = ai_move(board,depth,COMP)
+
+
+								printBoard(board,human_choice)
+								if wins(board,HUMAN):
+									if game_mode == 1:
+										print("AI-2 Wins")
+									else:
+										print("You Win")
+								elif wins(board,COMP):
+									if game_mode == 1:
+										print("AI-1 Wins")
+									else:
+										print("AI Wins")
+								else:
+									print("DRAW")
+
+							</code>
+						</pre>
+					</p>
+				</section>
+				<section id="4" class="section">
+					<h3>OBSERVATIONS</h3>
+				</section>
+				<section id="5" class="section">
+					<h3>CONCLUSION</h3>
 				</section>
 			
 				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
