@@ -3,13 +3,13 @@ const blogs = [
 		author: "Abhijoy Sarkar",
 		date: "20200323",
 		heading: "Colorful Image Colorization".slice(0,45),    /*Example entry*/
-		someText: "Implementation based on Zhang et al.'s paper".slice(0,70)
+		someText: ["#tech","#paper"]
 	},
 	{
 		author: "Abhijoy Sarkar",
 		date: "20200405",
-		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,40),    /*Example entry*/
-		someText: "Implementation of adverserial search AI to play tic tac toe".slice(0,70)
+		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,45),    /*Example entry*/
+		someText: ["#tech","#code"]
 	}
 ];
 
@@ -79,7 +79,12 @@ function populateBlogList(){
 		h5.style.height = "2em";
 
 		var p = document.createElement("p")
-		p.innerHTML = blogs[i].someText;
+		// Join the array
+		var new_array = blogs[i].someText.map(function(e) { 
+			e = "<mark>" + e + "</mark>"; 
+			return e;
+		});
+		p.innerHTML = new_array.join(" ").slice(0,70);
 		p.className = "card-text";
 		p.style.height = "5em";
 		p.style.fontSize = "0.8rem";
