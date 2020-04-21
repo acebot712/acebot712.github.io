@@ -89,10 +89,9 @@ h2{
 
 /* Go to top button */
 #myBtn {
-  display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10%;
+  right: 5%;
   z-index: 99;
   font-size: 15px;
   border: none;

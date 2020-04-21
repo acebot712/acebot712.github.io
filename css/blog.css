@@ -266,8 +266,8 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10%;
+  right: 5%;
   z-index: 99;
   font-size: 15px;
   border: none;
@@ -284,10 +284,4 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 #myBtn:hover {
   box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
   transform: translate3d(0, -2px, 0);
-}
-
-@media only screen and (max-width: 600px){
-  #myBtn{
-    bottom: 10%;
-  }
 }
