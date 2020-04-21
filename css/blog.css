@@ -185,10 +185,18 @@ body{
   z-index: 2;
 }
 
-@media screen and (max-width: 620px) {
-  .searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
+@media only screen and (max-width: 600px) {
+  .searchBox{
+    bottom: 0;
+    transform: translate(-50%,0%);
+    width: 100%;
+    border-radius: 0;
+  }
+
+  
+  .searchBox:hover > .searchButton {
+    background: white;
+    color : #2f3640;
   }
 }
 
@@ -276,4 +284,10 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 #myBtn:hover {
   box-shadow: 2px 8px 45px rgba(255, 255, 255, .15);
   transform: translate3d(0, -2px, 0);
+}
+
+@media only screen and (max-width: 600px){
+  #myBtn{
+    bottom: 10%;
+  }
 }

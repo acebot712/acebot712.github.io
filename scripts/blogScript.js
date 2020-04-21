@@ -146,11 +146,12 @@ function setColor(){
 }
 
 function searchFunction(){
-	var input,filter,table, cardText, txtValue,txtValue2;
+	var input,filter,table, cardText, txtValue,txtValue2, count;
 	input = document.getElementById("search");
 	filter = input.value.toUpperCase();
 	table = document.getElementById("ul");
 	cards = document.querySelectorAll(".card");
+	count = 0;
 
 	for(var i=0;i<cards.length;i++){
 		cardText = cards[i].querySelector(".card-text");
@@ -163,8 +164,18 @@ function searchFunction(){
 				cards[i].style.display = "";
 			}else{
 				cards[i].style.display = "none";
+				count++;
+				
 			}
 		}
+	}
+
+	var warning = document.getElementById("warning");
+	if(count == cards.length){
+		warning.style.display = "";
+		warning.innerHTML = "&#9888 Oops! Cannot find keyword '" + filter + "' in blog list.";
+	}else{
+		warning.style.display = "none";
 	}
 }
 
