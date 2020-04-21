@@ -173,7 +173,7 @@ function searchFunction(){
 	var warning = document.getElementById("warning");
 	if(count == cards.length){
 		warning.style.display = "";
-		warning.innerHTML = "&#9888 Oops! Cannot find keyword '" + filter + "' in blog list.";
+		warning.innerHTML = "&#9888 Oops! Cannot find keyword '" + input.value + "' in blog list.";
 	}else{
 		warning.style.display = "none";
 	}
