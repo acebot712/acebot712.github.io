@@ -50,8 +50,8 @@ Tables must come with the caption tag:-
 Get latex of equation from:- https://www.hostmath.com/
 
 ?Share preview sizes:
-Facebook:- 1200 * 630 px
-Twitter:- 1024 * 512 px
+@param Facebook:- 1200 px * 630 px content="https://acebot712.github.io/images/1_blog/facebook_share.png"
+@param Twitter:- 1024 px * 512 px content="https://acebot712.github.io/images/1_blog/twitter_share.png"
 --> 
 
 <!DOCTYPE html>
@@ -76,7 +76,7 @@ Twitter:- 1024 * 512 px
 	<meta property="og:type" content="article" />
 	<meta property="og:article:author" content="Abhijoy Sarkar" />
 	<meta property="og:url" content="https://acebot712.github.io/blogs/1_blog.html" />
-	<meta property="og:image" content="https://acebot712.github.io/images/0_blog/facebook_share.png" />
+	<meta property="og:image" content="https://acebot712.github.io/images/1_blog/facebook_share.png" />
 	<meta property="og:description" content="Blog: Abhijoy Sarkar. 
 	Coder, Designer, AI Researcher, Entrepreneur. 
 	Read my blogs or browse my projects. 
@@ -91,7 +91,7 @@ Twitter:- 1024 * 512 px
 	Coder, Designer, AI Researcher, Entrepreneur. 
 	Read my blogs or browse my projects. 
 	Visit Page for a consultation..." />
-	<meta name="twitter:image" content="https://acebot712.github.io/images/0_blog/twitter_share.png" />
+	<meta name="twitter:image" content="https://acebot712.github.io/images/1_blog/twitter_share.png" />
 	<!-- * Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157
 		* or maximum of 4096x4096 pixels. Images must be less than 5MB in size. -->
 
@@ -159,7 +159,28 @@ Twitter:- 1024 * 512 px
 				<h2 id="heading">Tic Tac Toe AI using Minimax Algorithm</h2>
 				<p>By <em id="author">Abhijoy Sarkar</em> on <em id="date"></em></p>  <!-- YYYYMMDD Date string passed to blogScript.js -->
 				<hr>
-				<div class="fb-share-button" data-href="https://acebot712.github.io/blogs/1_blog.html" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+				<!-- *FACEBOOK SHARE BUTTON -->
+				<div class="fb-share-button" data-href="https://acebot712.github.io/blogs/1_blog.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+				<style media="screen" type="text/css">
+					.fb_iframe_widget span 
+					{
+						vertical-align: baseline !important;
+					}
+					</style>
+
+				<!-- *TWITTER SHARE BUTTON -->
+				<a class="twitter-share-button"
+				href="https://twitter.com/intent/tweet?text=Hello%20world"
+				data-size="small"
+				data-show-count="false">
+				Tweet</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+				
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+            
 				<section class="section">
 					<h3>
 						Contents
@@ -435,7 +456,7 @@ Twitter:- 1024 * 512 px
 					</p>
 					<p>
 						<figure>
-							<img src="../images/0_blog/game_tree.jpg" width="100%"/>
+							<img src="../images/1_blog/game_tree.jpg" width="100%"/>
 							<figcaption><small>Figure 1: Game Tree for Tic Tac Toe</small></figcaption>
 						</figure>
 					</p>
@@ -685,6 +706,9 @@ Twitter:- 1024 * 512 px
 	<!-- Maths scripts end -->
 
 	<script src="../scripts/blogScript.js" defer></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e9e66c67a16fcb7"></script>
+
 	
 </body>
 </html>
