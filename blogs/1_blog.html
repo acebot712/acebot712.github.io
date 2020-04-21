@@ -1,6 +1,6 @@
 <!-- 
-	INSTRUCTIONS FOR AUTHOR
-=================================
+?	INSTRUCTIONS FOR AUTHOR
+?=================================
 Do not change the header here.
 It is not necessary to provide title,author,date here but rather do it blogScript.js.
 However writing it is convenient. 
@@ -8,6 +8,7 @@ Date format is YYYYMMDD
 
 !NO NEED TO INCLUDE MATHJAX AND PRISMJS IF YOU ARE NOT USING IT
 
+* PrismJS
 PrismJS is used for code formatting
 Use the format <pre><code> tags as is by changing languages as you require. If something seems broken,
 head over to https://cdnjs.com/libraries/prism to copy any missing libraries.
@@ -16,12 +17,16 @@ https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-tomorrow.min.cs
 
 Head over to https://prismjs.com/index.html to find information on how to use plugins.
 
+* Set
+@ isBlogArticle blogID
 In the second div of the container (after "Abhijoy's Blog"), make sure to set the variables isBlogArticle
 and blogID carefully and ensure the blog ID reflects in blogScript.js.
 
+* TOC
 Special CSS (https://css-tricks.com/hash-tag-links-padding/) is added to header to make sure they are visible
 when anchoring to them.
 
+* SECTIONS
 All sections use a latex style seperation, i.e.,
 <section class="section">
 	<section class="subsection">
@@ -35,9 +40,12 @@ So much so the headers of each section are in the following format:-
 
 The sections have id="-section number-"
 
+* IMAGES and VIDEOS
 All images should be inside <figure> with <figcaption> inside it.
+@mx-auto d-block img-fluid rounded
 Recommended Video ratio 560:315
 
+* TABLES
 Tables must come with the caption tag:-
 <table>
   <caption>Monthly savings</caption>
@@ -47,11 +55,17 @@ Tables must come with the caption tag:-
   </tr>
 </table>
 
+* EQUATIONS
 Get latex of equation from:- https://www.hostmath.com/
 
+* SHARE image params
 ?Share preview sizes:
 @param Facebook:- 1200 px * 630 px content="https://acebot712.github.io/images/1_blog/facebook_share.png"
 @param Twitter:- 1024 px * 512 px content="https://acebot712.github.io/images/1_blog/twitter_share.png"
+
+* Blockquotes and Abbreviations
+<blockquote>
+<abbr>
 --> 
 
 <!DOCTYPE html>
@@ -456,8 +470,12 @@ Get latex of equation from:- https://www.hostmath.com/
 					</p>
 					<p>
 						<figure>
-							<img src="../images/1_blog/game_tree.jpg" width="100%"/>
-							<figcaption><small>Figure 1: Game Tree for Tic Tac Toe</small></figcaption>
+							<img src="../images/1_blog/game_tree.jpg" class="mx-auto d-block img-fluid rounded" />
+							<figcaption>
+								<small>
+									Figure 1: Game Tree for Tic Tac Toe
+								</small>
+							</figcaption>
 						</figure>
 					</p>
 					<p>
@@ -635,7 +653,7 @@ Get latex of equation from:- https://www.hostmath.com/
 						the algorithm so that we can perform the same feat with	higher depth settings and lower computational resource usage.
 					</p>
 					<p>
-						<img src="https://clipartart.com/images/clipart-hurrah.jpg" width="100%"/>
+						<img src="https://clipartart.com/images/clipart-hurrah.jpg" class="mx-auto d-block img-fluid rounded"/>
 					</p>
 				</section>
 			
