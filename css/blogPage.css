@@ -111,6 +111,8 @@ h2{
   transform: translate3d(0, -2px, 0);
 }
 
+
+/* Sections */
 .section::before,.subsection::before,.subsubsection::before,.subsubsubsection::before { 
   display: block; 
   content: ""; 
