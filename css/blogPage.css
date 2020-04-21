@@ -76,6 +76,13 @@ section a{
 
 }
 
+/* Crucial to eliminate CSS from getting applied to children of above */
+.container .row div:nth-child(2) div{
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
 h1{
   color: #fff;
 	padding: 10px;

@@ -207,6 +207,7 @@ body{
   justify-content: space-evenly;
   z-index: 1;
   position: absolute;
+  margin-bottom: 10%;
 }
 
 .card {
