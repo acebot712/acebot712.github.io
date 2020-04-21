@@ -145,6 +145,28 @@ function setColor(){
 	setTimeout(setColor,60000);
 }
 
+function searchFunction(){
+	var input,filter,table, cardText, txtValue,txtValue2;
+	input = document.getElementById("search");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("ul");
+	cards = document.querySelectorAll(".card");
+
+	for(var i=0;i<cards.length;i++){
+		cardText = cards[i].querySelector(".card-text");
+		cardTitle = cards[i].querySelector(".card-title");
+		if(cardText){
+			txtValue = cardText.textContent || cardText.innerText;
+			txtValue = txtValue.replace(/#/gi,"");
+			txtValue2 = cardTitle.textContent || cardTitle.innerText;
+			if(txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1){
+				cards[i].style.display = "";
+			}else{
+				cards[i].style.display = "none";
+			}
+		}
+	}
+}
 
 //==============================DEFINITIONS ABOVE THIS LINE===========================================================================
 
