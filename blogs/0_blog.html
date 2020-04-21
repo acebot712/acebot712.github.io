@@ -6,6 +6,8 @@ It is not necessary to provide title,author,date here but rather do it blogScrip
 However writing it is convenient. 
 Date format is YYYYMMDD
 
+!NO NEED TO INCLUDE MATHJAX AND PRISMJS IF YOU ARE NOT USING IT
+
 PrismJS is used for code formatting
 Use the format <pre><code> tags as is by changing languages as you require. If something seems broken,
 head over to https://cdnjs.com/libraries/prism to copy any missing libraries.
@@ -44,10 +46,16 @@ Tables must come with the caption tag:-
     <th>Savings</th>
   </tr>
 </table>
+
+Get latex of equation from:- https://www.hostmath.com/
+
+?Share preview sizes:
+@param Facebook:- 1200 px * 630 px content="https://acebot712.github.io/images/1_blog/facebook_share.png"
+@param Twitter:- 1024 px * 512 px content="https://acebot712.github.io/images/1_blog/twitter_share.png"
 --> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 	<!-- !META TAGS -->
 	<meta charset="utf-8">
@@ -62,6 +70,32 @@ Tables must come with the caption tag:-
 	<meta name="author" content="Abhijoy Sarkar">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Facebook share -->
+	<meta property="fb:app_id" content="587151735484949" />
+	<meta property="og:title" content="Tic Tac Toe AI using Minimax Algorithm" />
+	<meta property="og:type" content="article" />
+	<meta property="og:article:author" content="Abhijoy Sarkar" />
+	<meta property="og:url" content="https://acebot712.github.io/blogs/1_blog.html" />
+	<meta property="og:image" content="https://acebot712.github.io/images/1_blog/facebook_share.png" />
+	<meta property="og:description" content="Blog: Abhijoy Sarkar. 
+	Coder, Designer, AI Researcher, Entrepreneur. 
+	Read my blogs or browse my projects. 
+	Visit Page for a consultation..." />
+
+	<!-- Twitter share -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@AbhijoySarkar" />
+	<meta name="twitter:url" content="https://acebot712.github.io/blogs/1_blog.html" />
+	<meta name="twitter:title" content="Tic Tac Toe AI using Minimax Algorithm" />
+	<meta name="twitter:description" content="Blog: Abhijoy Sarkar. 
+	Coder, Designer, AI Researcher, Entrepreneur. 
+	Read my blogs or browse my projects. 
+	Visit Page for a consultation..." />
+	<meta name="twitter:image" content="https://acebot712.github.io/images/1_blog/twitter_share.png" />
+	<!-- * Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157
+		* or maximum of 4096x4096 pixels. Images must be less than 5MB in size. -->
+
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 	<!-- PrismJS css -->
@@ -74,6 +108,10 @@ Tables must come with the caption tag:-
 	<title>ABHIJOY SARKAR</title>
 </head>
 <body>
+		<!-- Load Facebook SDK for JavaScript -->
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+
 		<div id="loader"></div>
 		<!-- START OF HEADER -->
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -104,7 +142,7 @@ Tables must come with the caption tag:-
 		<!-- END OF HEADER -->
 
 
-	<div class="container">
+	<div class="container main">
 		<div>
 			<center><h1>Abhijoy's Blog</h1></center>
 		</div>
@@ -118,10 +156,28 @@ Tables must come with the caption tag:-
 				
 				<!-- BEGIN WRITEUP FROM HERE -->
 
-				<h2 id="heading">Colorful Image Colorization</h2>
+				<h2 id="heading">Colorful Image colorization</h2>
 				<p>By <em id="author">Abhijoy Sarkar</em> on <em id="date"></em></p>  <!-- YYYYMMDD Date string passed to blogScript.js -->
 				<hr>
 
+				<!-- !To add custom share buttons -->
+				<!-- *FACEBOOK SHARE BUTTON
+				<div class="fb-share-button" data-href="https://acebot712.github.io/blogs/1_blog.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+				<style media="screen" type="text/css">
+					.fb_iframe_widget span 
+					{
+						vertical-align: baseline !important;
+					}
+					</style> -->
+
+				<!-- *TWITTER SHARE BUTTON
+				<a class="twitter-share-button"
+				href="https://twitter.com/intent/tweet?text=Hello%20world"
+				data-size="small"
+				data-show-count="false">
+				Tweet</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            
 				<section class="section">
 					<h3>
 						Contents
@@ -178,8 +234,8 @@ Tables must come with the caption tag:-
 				</section>
 				<hr>
 
-				<section class="section">
-					<h3 id="3">3 Code</h3>
+				<section id="3" class="section">
+					<h3>3 Code</h3>
 					<p>We are going to set the human player as the minimizing player and the AI as the maximizing player.
 						To identify we enumerate the human player as -1 and the AI as +1 for the AI vs HUMAN mode.
 						When we play AI vs AI, we will make one of the AIs the minimizing player. Thus the choice here does not
@@ -187,7 +243,6 @@ Tables must come with the caption tag:-
 						the human player.
 					</p>
 
-					<span>Python</span>
 					<pre class="line-numbers" data-start="1">
 						<code class="language-python">
 							from math import inf as infinity
@@ -240,7 +295,345 @@ Tables must come with the caption tag:-
 					while the minimizing player inputs a -1.
 					</p>
 
+					<p>
+						We build a function that checks if any of the players has reached the winning state.
+                        This function should be generalized for the size of the board. Specifically, we try to
+                        detect if any player has filled the diagonals, rows, or columns on the board.
+					</p>
+					
+					<pre class="line-numbers" data-start="25">
+						<code class="language-python">
+							def wins(board,player):
+								# generalized
+								win_states = []
+								
+								# main diagonal
+								win_state = []
+								for row in range(len(board)):
+									win_state.append(board[row][row])
+								win_states.append(win_state)
+								
+								#other diagonal
+								win_state = []
+								for row in range(len(board)):
+									win_state.append(board[row][(len(board) - 1) - row])
+								win_states.append(win_state)
+								
+								# horizontals
+								for row in range(len(board)):
+									win_state = []
+									for col in range(len(board)):
+										win_state.append(board[row][col])
+									win_states.append(win_state)
+									
+								# verticals
+								for col in range(len(board)):
+									win_state = []
+									for row in range(len(board)):
+										win_state.append(board[row][col])
+									win_states.append(win_state)
+									
+								if [player]*len(board) in win_states:
+									return True
+								return False
+						</code>
+					</pre>
 
+					<p>
+						The function  returns <code class="language-python">True</code> if any
+						of the possible winning state has been acheived.
+					</p>
+
+					<p>
+						This minimax algorithm has a simple evaluation function. 
+					</p>
+					<p>
+						$$
+						Eval(board) = \begin{cases}-1 & wins(board,HUMAN) = True\\
+						+1 & wins(board,COMP) = True\\
+						0 & otherwise\end{cases}
+						$$
+					</p>
+					<p>
+						We shall analyze the problems of this approach
+						in the <a href="#4">Observations</a> section. Later we try
+						to tackle all of these problems by constructing more complex evaluation functions.
+					</p>
+					<pre class="line-numbers" data-start="68">
+						<code class="language-python">
+							def evaluate(board):
+								if wins(board,HUMAN):
+									return -1
+								elif wins(board,COMP):
+									return +1
+								else:
+									return 0
+						</code>
+					</pre>
+					<p>
+						We shall design a few more helper functions.
+					</p>
+					<pre class="line-numbers" data-start="68">
+						<code class="language-python">
+							def empty_cells(state):
+								"""
+								Each empty cell will be added into cells' list
+								:param state: the state of the current board
+								:return: a list of empty cells
+								"""
+								cells = []
+
+								for x, row in enumerate(state):
+									for y, cell in enumerate(row):
+										if cell == 0:
+											cells.append([x, y])
+
+								return cells
+						</code>
+					</pre>
+					<p>
+						The above function helps checks for all the cells where a move has been made and
+						returns the possible valid moves at any turn.
+					</p>
+					<pre class="line-numbers" data-start="83">
+						<code class="language-python">
+							def children(board,player):
+								child_states = []
+								for empty_cell in empty_cells(board):
+									child = [row[:] for row in board]
+									child[empty_cell[0]][empty_cell[1]] = player
+									child_states.append(child)
+								return child_states
+						</code>
+					</pre>
+					<p>
+						The above code may look similar to an empty-cells function—however, the purpose
+						of this function to create children, which is turn-based.
+						The <code class="language-python">empty_cells</code> function will be used to
+						determine children based on how the players perceive what shall happen on their next turn.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="91">
+							<code class="language-python">
+								def game_over(board):
+									if wins(board,HUMAN) or wins(board,COMP) or not empty_cells(board):
+										return True
+									return False
+									
+								def printBoard(board,human_choice):
+									for row in board:
+										print("======"*size)
+										if human_choice == "X":
+											d = {
+												1: "O",
+												0: " ",
+												-1: "X"
+											}
+										else:
+											d = {
+												1: "X",
+												0: " ",
+												-1: "O"
+											}
+										string = [d[i] for i in row]
+										string[0] =  "  " + string[0]
+										print("  |  ".join(string))
+									print("======"*size)
+							</code>
+						</pre>
+					</p>
+					<p>
+						The above two functions are fairly simple with <code class="language-python">game_over</code>
+						detecting if a player has already won or there are no valid moves left while <code class="language-python">
+						printBoard</code> prints the board in a form readable by us.
+					</p>
+					<p>
+						We are finally ready to create the <code class="language-python">minimax</code> function which is
+						the heart of our program.
+					</p>
+					<p>
+						<figure>
+							<img src="../images/1_blog/game_tree.jpg" width="100%"/>
+							<figcaption><small>Figure 1: Game Tree for Tic Tac Toe</small></figcaption>
+						</figure>
+					</p>
+					<p>
+						To traverse an entire search tree of some unknown depth, we are better of using a recursive approach.
+						We traverse the tree in a top-down fashion until we reach a terminal node. Since there are two players involved,
+						the parent nodes select the child value that benefits them the most. If the parent is the minimizing player,
+						then it tries to reach a terminal node that returns a value of -1 while the maximizing player aims for a value of +1.
+						This alternating behavior of choosing a score for the node must be taken into account while performing the recursion.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="116">
+							<code class="language-python">
+								# COMP is maximizing player
+								def minimax(board,depth,player):
+									# base condition
+									if depth == 0 or game_over(board):
+										return evaluate(board),board
+									
+									best_move = None
+									if player == COMP:
+										max_score = -infinity
+										for child in children(board,player):
+											score,_ = minimax(child,depth - 1,HUMAN)
+											if score > max_score:
+												max_score = score
+												best_move = child
+												#print(max_score)
+										return max_score,best_move
+									else:
+										min_score = +infinity
+										for child in children(board,player):
+											score,_ = minimax(child,depth - 1,COMP)
+											if score < min_score:
+												min_score = score
+												best_move = child
+										return min_score,best_move
+							</code>
+						</pre>
+					</p>
+					<p>
+						Since we have two game modes, we create another small helper function that activates
+						the above algorithm only when an AI is playing.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="141">
+							<code class="language-python">
+								def ai_move(board,depth,player):
+								_, best_move = minimax(board,depth,player)
+								return best_move
+							</code>
+						</pre>
+					</p>
+					<p>
+						We can now write our driver code that shall utilize all the functions that we have defined up to here.
+						It is here we split the functionality of our driver code based on the game mode selected.
+					</p>
+					<p>
+						<pre class="line-numbers" data-start="145">
+							<code class="language-python">
+								if game_mode == 1:
+									if human_choice == 'O':
+										while not game_over(board):
+											printBoard(board,human_choice)
+											print("AI-1's Turn")
+											board = ai_move(board,depth,COMP)
+											printBoard(board,human_choice)
+											if game_over(board):
+												break
+											"""
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											"""
+											# comment 2 lines below uncomment above to play
+											
+											print("AI-2's Turn")
+											board = ai_move(board,depth2,HUMAN)
+											
+									else:
+										while not game_over(board):
+											printBoard(board,human_choice)
+											"""
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											printBoard(board,human_choice)
+											"""
+											# comment 3 lines below uncomment above to play
+											
+											print("AI-2's Turn")
+											board = ai_move(board,depth2,HUMAN)
+											printBoard(board,human_choice)
+											
+											if game_over(board):
+												break
+											print("AI-1's Turn")
+											board = ai_move(board,depth,COMP)
+								else:
+									if human_choice == 'O':
+										while not game_over(board):
+											printBoard(board,human_choice)
+											print("AI's Turn")
+											board = ai_move(board,depth,COMP)
+											printBoard(board,human_choice)
+											if game_over(board):
+												break
+											
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											
+											# comment 2 lines below uncomment above to play
+											"""
+											print("AI-2's Turn")
+											board = ai_move(board,HUMAN)
+											"""
+											
+									else:
+										while not game_over(board):
+											printBoard(board,human_choice)
+											
+											print("Your Turn")
+											human_move = int(input("Enter number [1...16]: "))
+											board[(human_move-1)//size][int((human_move-1)%size)] = -1
+											printBoard(board,human_choice)
+											
+											# comment 3 lines below uncomment above to play
+											"""
+											print("AI-2's Turn")
+											board = ai_move(board,HUMAN)
+											printBoard(board,human_choice)
+											"""
+											if game_over(board):
+												break
+											print("AI's Turn")
+											board = ai_move(board,depth,COMP)
+
+
+								printBoard(board,human_choice)
+								if wins(board,HUMAN):
+									if game_mode == 1:
+										print("AI-2 Wins")
+									else:
+										print("You Win")
+								elif wins(board,COMP):
+									if game_mode == 1:
+										print("AI-1 Wins")
+									else:
+										print("AI Wins")
+								else:
+									print("DRAW")
+
+							</code>
+						</pre>
+					</p>
+				</section>
+				<section id="4" class="section">
+					<h3>OBSERVATIONS</h3>
+					<p>
+						We observe that at lower values of depth, the algorithm tries to defeat the opponent rather than try
+						and win itself. Setting a <code class="language-python">depth = 2</code> ensures that with direct tactics
+						(filling up a row, column, or diagonal)
+						in one go does not work. However, the AI falters if traps are set (Fig. 21). We can create an unbeatable
+						AI for the 4x4 grid by setting <code class="language-python">depth = 4</code>. Here the is AI can foresee all possible traps that can be possibly set.
+						We conjecture that for a high value of depth, the AI can create its traps. However, the basic version of the
+						minimax algorithm does not prove feasible to verify this. We saw an effective branching factor to be 8.
+					</p>
+				</section>
+				<section id="5" class="section">
+					<h3>What's Next?</h3>
+					<p>
+						In this tutorial, we have successfully made an artificially intelligent bot that, given enough
+						computational power, never loses a tic tac toe game. We shall address some of the issues in 
+						<a href="4">Observations</a> in the next tutorial in this series. The next part tries to improve
+						the algorithm so that we can perform the same feat with	higher depth settings and lower computational resource usage.
+					</p>
+					<p>
+						<img src="https://clipartart.com/images/clipart-hurrah.jpg" />
+					</p>
 				</section>
 			
 				<!-- ALL WRITE UP MUST COMPLETE BEFORE THIS LINE -->
@@ -303,7 +696,17 @@ Tables must come with the caption tag:-
 	<!-- For download button data-download-link data-download-link-label="Download this file" -->
 	
 	<!-- PrismJS scripts end -->
+
+	<!-- Maths scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<!-- Maths scripts end -->
+
 	<script src="../scripts/blogScript.js" defer></script>
+	
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e9e66c67a16fcb7"></script>
+
 	
 </body>
 </html>
