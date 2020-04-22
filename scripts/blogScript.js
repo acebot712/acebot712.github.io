@@ -3,13 +3,13 @@ const blogs = [
 		author: "Abhijoy Sarkar",
 		date: "20200323",
 		heading: "Colorful Image Colorization".slice(0,45),    /*Example entry*/
-		someText: ["#tech","#paper"]
+		someText: ["#tech","#paper","#zhang","#machinelearning","#cnn","#bw2color","#imagecolorize"]
 	},
 	{
 		author: "Abhijoy Sarkar",
 		date: "20200405",
 		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,45),    /*Example entry*/
-		someText: ["#tech","#code"]
+		someText: ["#tech","#code","#minimax","#tictactoe","#ai","#adversialsearch"]
 	}
 ];
 
@@ -84,7 +84,7 @@ function populateBlogList(){
 			e = "<mark>" + e + "</mark>"; 
 			return e;
 		});
-		p.innerHTML = new_array.join(" ").slice(0,70);
+		p.innerHTML = new_array.join(" ");
 		p.className = "card-text";
 		p.style.height = "5em";
 		p.style.fontSize = "0.8rem";
