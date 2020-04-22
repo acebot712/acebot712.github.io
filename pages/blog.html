@@ -32,7 +32,7 @@
 </head>
 <body>
 	<div id="loader"></div>
-	<span id="isBlogArticle" style="display: none">0</span>  <!-- Declare if it is a blog or not -->
+	<span id="isBlogArticle" style="display: none"></span>  <!-- Declare if it is a blog or not -->
 
 	<!-- Go to top button -->
 	<i class="fa fa-chevron-circle-up" aria-hidden="true" onclick="topFunction()" id="myBtn" title="Go to top"></i>
@@ -147,6 +147,18 @@
 	<script type="text/javascript" src="../scripts/particles.js"defer></script>
 	<script type="text/javascript" src="../scripts/app.js" defer></script>
 
+	<!-- Set blog ID -->
+	<script>
+		var path = window.location.pathname;
+		var page = path.split("/").pop()
+		
+		if(isNaN(page.slice(0,1))){
+			document.getElementById("isBlogArticle").innerText = 0;
+		}else{
+			document.getElementById("isBlogArticle").innerText = 1;
+			document.getElementById("blogID").innerText = page.slice(0,1);
+		}
+	</script>
 	<script src="../scripts/blogScript.js" defer></script>
 	
 </body>
