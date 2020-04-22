@@ -97,6 +97,7 @@ h2{
 
 /* Go to top button */
 #myBtn {
+  display: none;
   position: fixed;
   bottom: 10%;
   right: 5%;

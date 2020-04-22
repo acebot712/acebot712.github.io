@@ -268,6 +268,7 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 
 /* TOP BUTTON */
 #myBtn {
+  display: none;
   position: fixed;
   bottom: 10%;
   right: 5%;
