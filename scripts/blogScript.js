@@ -1,17 +1,18 @@
-const blogs = [
-	{
-		author: "Abhijoy Sarkar",
-		date: "20200323",
-		heading: "Colorful Image Colorization".slice(0,45),    /*Example entry*/
-		someText: ["#tech","#paper","#zhang","#machinelearning","#cnn","#bw2color","#imagecolorize"]
-	},
-	{
+// !Make entry for all blogs here
+const blogs = {
+	tictactoe_minimax: {
 		author: "Abhijoy Sarkar",
 		date: "20200405",
 		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,45),    /*Example entry*/
 		someText: ["#tech","#code","#minimax","#tictactoe","#ai","#adversialsearch"]
+	},
+	bw2color: {
+		author: "Abhijoy Sarkar",
+		date: "20200323",
+		heading: "Colorful Image Colorization".slice(0,45),    /*Example entry*/
+		someText: ["#tech","#paper","#zhang","#machinelearning","#cnn","#bw2color","#imagecolorize"]
 	}
-];
+};
 
 const noOfBackgrounds = 15;
 
@@ -58,14 +59,15 @@ function setTitle(blogID){
 	    */
 
 function populateBlogList(){
+	const entries = Object.entries(blogs)
 	var ul = document.getElementById("ul");
-	for(var i = 0;i < blogs.length; i++){
+	for(const [blogID, blogDetails] of entries){
 		var div = document.createElement("div");
 		div.className = "card";
 		div.style.width = '250px';
 
 		var img = document.createElement("img");
-		img.src = "../images/" + i +"_blog.jpg";
+		img.src = "../images/" + blogID + ".jpg";
 		img.alt = "Card Image";
 		img.style.width = div.style.width;
 		img.style.height = div.style.width;
@@ -74,13 +76,13 @@ function populateBlogList(){
 		div2.className = "card-body";
 
 		var h5 = document.createElement("h5")
-		h5.innerHTML = blogs[i].heading;
+		h5.innerHTML = blogDetails.heading;
 		h5.className = "card-title";
 		h5.style.height = "2em";
 
 		var p = document.createElement("p")
 		// Join the array
-		var new_array = blogs[i].someText.map(function(e) { 
+		var new_array = blogDetails.someText.map(function(e) { 
 			e = "<mark>" + e + "</mark>"; 
 			return e;
 		});
@@ -90,7 +92,7 @@ function populateBlogList(){
 		p.style.fontSize = "0.8rem";
 
 		var a = document.createElement("a");
-		a.href = "../blogs/" + i + "_blog.html";
+		a.href = "../blogs/" + blogID +  ".html";
 		a.className = "btn btn-primary";
 		a.innerHTML = "Read More";
 		a.style.width = "200px";

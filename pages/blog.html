@@ -168,11 +168,11 @@
 		var path = window.location.pathname;
 		var page = path.split("/").pop()
 		
-		if(isNaN(page.slice(0,1))){
+		if(page === "blog.html"){
 			document.querySelector("body").setAttribute("data-is-blog-article","0");
 		}else{
 			document.querySelector("body").setAttribute("data-is-blog-article","1");
-			document.querySelector("body").setAttribute("data-blog-id",page.slice(0,1));			
+			document.querySelector("body").setAttribute("data-blog-id",page.slice(0,-5));			
 
 		}
 	</script>

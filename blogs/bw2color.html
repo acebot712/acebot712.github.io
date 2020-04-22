@@ -26,17 +26,17 @@
 	<meta property="og:title" content="Colorful Image Colorization" />
 	<meta property="og:type" content="article" />
 	<meta property="og:article:author" content="Abhijoy Sarkar" />
-	<meta property="og:url" content="https://acebot712.github.io/blogs/1_blog.html" />
-	<meta property="og:image" content="https://acebot712.github.io/images/1_blog/facebook_share.png" />
+	<meta property="og:url" content="https://acebot712.github.io/blogs/tictactoe_minimax.html" />
+	<meta property="og:image" content="https://acebot712.github.io/images/tictactoe_minimax/facebook_share.png" />
 	<meta property="og:description" content="Abhijoy Sarkar | Black and white to color image with convolutional neural networks. Based on Zhang et al. paper." />
 
 	<!-- Twitter share -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@AbhijoySarkar" />
-	<meta name="twitter:url" content="https://acebot712.github.io/blogs/1_blog.html" />
+	<meta name="twitter:url" content="https://acebot712.github.io/blogs/tictactoe_minimax.html" />
 	<meta name="twitter:title" content="Colorful Image Colorization" />
 	<meta name="twitter:description" content="Abhijoy Sarkar | Black and white to color image with convolutional neural networks. Based on Zhang et al. paper." />
-	<meta name="twitter:image" content="https://acebot712.github.io/images/1_blog/twitter_share.png" />
+	<meta name="twitter:image" content="https://acebot712.github.io/images/tictactoe_minimax/twitter_share.png" />
 	<!-- * Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157
 		* or maximum of 4096x4096 pixels. Images must be less than 5MB in size. -->
 
@@ -113,7 +113,7 @@
 
 				<!-- !To add custom share buttons -->
 				<!-- *FACEBOOK SHARE BUTTON
-				<div class="fb-share-button" data-href="https://acebot712.github.io/blogs/1_blog.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+				<div class="fb-share-button" data-href="https://acebot712.github.io/blogs/tictactoe_minimax.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 				<style media="screen" type="text/css">
 					.fb_iframe_widget span 
 					{
@@ -407,7 +407,7 @@
 					</p>
 					<p>
 						<figure>
-							<img src="../images/1_blog/game_tree.jpg" class="mx-auto d-block img-fluid rounded" />
+							<img src="../images/tictactoe_minimax/game_tree.jpg" class="mx-auto d-block img-fluid rounded" />
 							<figcaption><small>Figure 1: Game Tree for Tic Tac Toe</small></figcaption>
 						</figure>
 					</p>
@@ -644,11 +644,11 @@
 		var path = window.location.pathname;
 		var page = path.split("/").pop()
 		
-		if(isNaN(page.slice(0,1))){
+		if(page === "blog.html"){
 			document.querySelector("body").setAttribute("data-is-blog-article","0");
 		}else{
 			document.querySelector("body").setAttribute("data-is-blog-article","1");
-			document.querySelector("body").setAttribute("data-blog-id",page.slice(0,1));			
+			document.querySelector("body").setAttribute("data-blog-id",page.slice(0,-5));			
 
 		}
 	</script>
