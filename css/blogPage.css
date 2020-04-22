@@ -101,15 +101,15 @@ h2{
   bottom: 10%;
   right: 5%;
   z-index: 99;
-  font-size: 15px;
+  font-size: 25px;
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color: red;
+  background-color: rgb(223, 37, 37);
   color: white;
   cursor: pointer;
-  padding: 15px;
-  box-shadow: 2px 4px 25px rgba(255, 255, 255, .1);
+  padding: 10px;
+  box-shadow: 2px 4px 35px rgba(255, 255, 255, .1);
   transition: all .2s linear;
 }
 
