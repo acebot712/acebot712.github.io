@@ -182,7 +182,7 @@ function searchFunction(){
 //==============================DEFINITIONS ABOVE THIS LINE===========================================================================
 
 
-var isBlogArticle = document.getElementById("isBlogArticle").innerText
+var isBlogArticle = document.querySelector("body").getAttribute("data-is-blog-article");
 if(isBlogArticle == 1){
 	
 
@@ -221,9 +221,9 @@ if(isBlogArticle == 1){
 
 
 
-	setDate(document.getElementById("blogID").innerText)
-	setAuthor(document.getElementById("blogID").innerText)
-	setTitle(document.getElementById("blogID").innerText)
+	setDate(document.querySelector("body").getAttribute("data-blog-id"));
+	setAuthor(document.querySelector("body").getAttribute("data-blog-id"));
+	setTitle(document.querySelector("body").getAttribute("data-blog-id"));
 	document.querySelector("body").style.background = "url(../assets/background_0.jpg) center" //default
 	setColor();
 }else{

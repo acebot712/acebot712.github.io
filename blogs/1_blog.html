@@ -660,10 +660,11 @@
 		var page = path.split("/").pop()
 		
 		if(isNaN(page.slice(0,1))){
-			document.getElementById("isBlogArticle").innerText = 0;
+			document.querySelector("body").setAttribute("data-is-blog-article","0");
 		}else{
-			document.getElementById("isBlogArticle").innerText = 1;
-			document.getElementById("blogID").innerText = page.slice(0,1);
+			document.querySelector("body").setAttribute("data-is-blog-article","1");
+			document.querySelector("body").setAttribute("data-blog-id",page.slice(0,1));			
+
 		}
 	</script>
 	<script src="../scripts/blogScript.js" defer></script>
