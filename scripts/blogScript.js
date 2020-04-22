@@ -3,14 +3,14 @@ const blogs = {
 	tictactoe_minimax: {
 		author: "Abhijoy Sarkar",
 		date: "20200405",
-		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,45),    /*Example entry*/
-		someText: ["#tech","#code","#minimax","#tictactoe","#ai","#adversialsearch"]
+		heading: "Tic Tac Toe AI using Minimax Algorithm".slice(0,45),
+		someText: ["#tech","#code","#minimax","#tictactoe","#ai","#adversarial search"]
 	},
 	bw2color: {
 		author: "Abhijoy Sarkar",
 		date: "20200323",
 		heading: "Colorful Image Colorization".slice(0,45),    /*Example entry*/
-		someText: ["#tech","#paper","#zhang","#machinelearning","#cnn","#bw2color","#imagecolorize"]
+		someText: ["#tech","#paper","#zhang","#machine learning","#cnn","#bw2color","#imagecolorize", "#neural network"]
 	}
 };
 
