@@ -184,11 +184,48 @@ function searchFunction(){
 
 var isBlogArticle = document.getElementById("isBlogArticle").innerText
 if(isBlogArticle == 1){
+	
+
+	$(window).scroll(function(){
+		if($('button.navbar-toggler').attr('aria-expanded')=="false"){
+			$('nav').toggleClass('scrolled', $(this).scrollTop() > 5);
+			$('nav').toggleClass('navbar-dark', $(this).scrollTop() <= 5);
+			$('nav').toggleClass('navbar-light', $(this).scrollTop() > 5);
+		}	
+	});
+
+	$('button.navbar-toggler').click(function(){
+		if($(window).scrollTop() <= 5){
+			$('nav').toggleClass('scrolled',$('button.navbar-toggler').attr('aria-expanded'));
+			$('nav').toggleClass('navbar-dark', $('button.navbar-toggler').attr('aria-expanded')=="true");
+			$('nav').toggleClass('navbar-light', $('button.navbar-toggler').attr('aria-expanded')=="false");
+		}
+	});
+
+	$(window).click(function(e){
+		// console.log($(e.target).closest($('nav'))[0] != $('nav')[0]);
+		// console.log($(e.target).closest($('nav'))[0]);
+		// console.log($('nav')[0]);
+		if($(e.target).closest($('nav'))[0] != $('nav')[0]){
+			if($('button.navbar-toggler').attr('aria-expanded')){
+				$('.navbar-collapse.collapse').removeClass("show");
+				$('button.navbar-toggler').attr('aria-expanded',"false");
+				$('button.navbar-toggler').addClass('collapsed');
+				// remove scrolled only if not scrolled
+				if($(this).scrollTop() <= 5)
+					$('nav').removeClass('scrolled');
+			}
+		}		
+	});
+	
+
+
+
 	setDate(document.getElementById("blogID").innerText)
 	setAuthor(document.getElementById("blogID").innerText)
 	setTitle(document.getElementById("blogID").innerText)
 	document.querySelector("body").style.background = "url(../assets/background_0.jpg) center" //default
-	setColor()
+	setColor();
 }else{
 	populateBlogList();
 }
