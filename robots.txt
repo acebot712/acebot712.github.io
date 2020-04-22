@@ -1,6 +1,15 @@
 User-agent: *
+Disallow: /*README.md$
+Disallow: /pages/contact.html
+Disallow: /*video.mp4$
+Disallow: /*resume.pdf$
 Disallow: /*.css$
 Disallow: /*.js$
 Disallow: /.vscode*
+Disallow: /assets/*
+Disallow: /images/
+Allow: /images/*share*
+Allow: /assets/bhaloto.png
+Allow: /assets/*share*
 
 Sitemap: https://acebot712.github.io/sitemap.xml
