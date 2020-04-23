@@ -217,6 +217,10 @@ if(isBlogArticle == 1){
 	setTitle(document.querySelector("body").getAttribute("data-blog-id"));
 	document.querySelector("body").style.background = "url(../assets/background_0.jpg) center" //default
 	setColor();
+	var list = document.querySelectorAll("p")
+	for (var i = 0; i < list.length; ++i) {
+		list[i].classList.add('text-justify');
+	}
 }else{
 	populateBlogList();
 }
