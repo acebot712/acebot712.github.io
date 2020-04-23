@@ -8,7 +8,7 @@ function randomColor(){
 }
 
 function setColor(){
-	document.querySelector("body").style.background = randomColor();
+	document.querySelector("body").style.background-image = randomColor();
 	setTimeout(setColor,10000);
 }
 
