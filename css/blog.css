@@ -49,24 +49,6 @@ body{
   100% { transform: rotate(360deg); }
 }
 
-#resumeButton{
-  display: none;
-}
-    
-@media only screen and (max-width: 600px){
-  .toBeReplaced{
-    display: none;
-  }
-
-  #resumeButton{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: block;
-  }
-}
-
 /* NAVBAR START */
 .navbar:not([scrolled]){
   transition: all 0.5s linear;

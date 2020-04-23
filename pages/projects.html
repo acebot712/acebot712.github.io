@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" type="text/css" href="../css/projects.css">
@@ -76,24 +77,23 @@
       <div class="row">
         <h1>Abhijoy's Projects</h1>
       </div>
-      
+      <div class="row"></div>
       <div class="row">
-        <div></div>
-        <div class="col-md-10 col-sm-4">
-          <table id="dtBasicExample" class="table table-dark table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <div class="col">
+          <table id="dtBasicExample" class="table table-dark table-striped" cellspacing="0" >
             <thead>
               <tr>
-                <th class="th-sm">#
+                <th class="th" style="width: 5%">#
                 </th>
-                <th class="th-sm">Title
+                <th class="th">Title
                 </th>
-                <th class="th-sm">Description
+                <th class="th d-none d-sm-block">Description
                 </th>
-                <th class="th-sm">Code
+                <th class="th">Code
                 </th>
-                <th class="th-sm">Blog
+                <th class="th">Blog
                 </th>
-                <th class="th-sm">Presentation
+                <th class="th">Presentation
                 </th>
 
               </tr>
@@ -101,25 +101,25 @@
             <tbody>
             <!-- Copy from here -->
             <tr>
-              <td>1</td>
+              <th>1</td>
               <td>LSTMSA</td>
-              <td>A novel approach to stock market prediction using LSTMs and Sentiment Analysis</td>
+              <td class="d-none d-sm-block">A novel approach to stock market prediction using LSTMs and Sentiment Analysis</td>
               <td><a href="#">[code]</a></td>
               <td><a href="#">[blog]</a></td>
               <td><a href="https://www.slideshare.net/abhijoysarkar1/lstmsa-a-novel-approach-to-stock-market-prediction-using-lstm-and-sentiment-analysis">[presentation]</a></td>
             </tr>
             <tr>
-              <td>2</td>
+              <th>2</td>
               <td>Colorful Image Colorization</td>
-              <td>Implementation based on <a href="https://richzhang.github.io/colorization/">Zhang et al.'s paper</a></td>
+              <td class="d-none d-sm-block">Implementation based on <a href="https://richzhang.github.io/colorization/">Zhang et al.'s paper</a></td>
               <td><a href="#">[code]</a></td>
               <td><a href="../blogs/bw2color.html">[blog]</a></td>
               <td><a href="#">[presentation]</a></td>
             </tr>
             <tr>
-              <td>3</td>
+              <th>3</td>
               <td>Tic Tac Toe AI using Minimax Algorithm</td>
-              <td>Adverserial search implementation on generalized tic tac toe</td>
+              <td class="d-none d-sm-block">Adverserial search implementation on generalized tic tac toe</td>
               <td><a href="#">[code]</a></td>
               <td><a href="../blogs/tictactoe_minimax.html">[blog]</a></td>
               <td><a href="#">[presentation]</a></td>
@@ -130,12 +130,10 @@
           </table>
         </div>
       </div>
-      <div class="row">
-        <div>
-          <h1>Code Snippets</h1>
-        </div>
-      </div>
+      
+      <a href="../pages/index.html">&larr; Go to Home Page</a>
     </div>
+
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

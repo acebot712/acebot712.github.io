@@ -48,18 +48,13 @@ body{
     100% { transform: rotate(360deg); }
     }
 
+/* Table styles */
 table{
   border-radius: 20px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
               0 2px 2px rgba(0,0,0,0.15), 
               0 4px 4px rgba(0,0,0,0.15), 
               0 8px 8px rgba(0,0,0,0.15);
-}
-
-@media only screen and (max-width: 600px){
-  table{
-    table-layout: fixed;
-  }
 }
 
 th,td{
