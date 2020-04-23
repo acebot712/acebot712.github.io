@@ -73,4 +73,7 @@ Get latex of equation from:- https://www.hostmath.com/
 * Blockquotes and Abbreviations
 <blockquote>
 <abbr>
+
+* Responsive test (before deployment supported)
+http://responsivetesttool.com/
 --> 
